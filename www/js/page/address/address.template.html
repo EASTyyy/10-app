@@ -1,0 +1,60 @@
+<ion-view view-title="收货地址" class="address-view-container" hide-back-button="true">
+    <ion-nav-title>
+        <div class="bar bar-header">
+            <youren-back-button></youren-back-button>
+            <h1 class="title">收货地址</h1>
+        </div>
+    </ion-nav-title>
+    <!--<ion-nav-buttons side="right">-->
+    <!--<button my-sref="address-create" class="button button-clear"><i-->
+    <!--class="icon ion-ios-plus-outline address-add-icon"></i></button>-->
+    <!--</ion-nav-buttons>-->
+    <ion-content class="has-header" ng-cloak>
+        <ion-list ng-if="hasAddress()">
+            <ion-item ng-repeat="item in addresses" class="address-choose-item">
+                <div class="row">
+                    <div class="address-choice">
+                        <!--<ion-list>-->
+                            <!--<ion-checkbox ng-model="item.flag" ng-checked="isDefaultAddress(item)" ng-class="{'show-check-box': isDefaultAddress(item)}" ng-disabled="true"></ion-checkbox>-->
+                        <!--</ion-list>-->
+                        <i class="icon iconfont icon-selected" ng-class="{'show-check-box': isDefaultAddress(item)}"></i>
+                    </div>
+                    <div class="address-left">
+                        <div class="text-pulling">
+                            <!--<span ng-if="item.flag==true" class="label label-default">默认</span>-->
+                            <p><span class="pull-left">{{ item.name }}</span><span class="pull-right address-phone">{{ item.phone }}</span></p>
+                        </div>
+                        <div>
+                            <span ng-if="item.flag" class="default-address-badge">【默认】</span><span ng-class="{'default-address-info': item.flag}" class="full-address">{{item.area}} {{item.addr }}</span>
+                        </div>
+                        <ion-option-button ng-click="delete(item)" class="address-option-btn">
+                            <div>
+                                <a><i class="iconfont icon-dustbin"></i></a>
+                                <p>删除</p>
+                            </div>
+                        </ion-option-button>
+                    </div>
+                    <div class="col-center">
+                        <!--<a my-sref="address-update({id: item.id})" class="">-->
+                        <!--<i class="icon ion-edit stable" title="编辑"></i>-->
+                        <!--</a>-->
+                        <a ng-click="goTo({state: 'address-update',id: item.id})" class="icon iconfont icon-edit"></a>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+        <div class="loading-animation-container" ng-if="showLoading">
+            <div class="loading-animation"><i></i><i></i></div>
+        </div>
+    </ion-content>
+    <div class="empty-content-container" ng-if="initialized&&!hasAddress()">
+        <div class="empty-image"></div>
+        <div class="empty-text"></div>
+        <button type="button" class="button button-radius button-clr-red" ng-click="go('address-create')">新增地址</button>
+    </div>
+    <div class="bar bar-footer create-address-btn">
+        <a ng-click="go('address-create')">
+            <span class="title">新增地址</span>
+        </a>
+    </div>
+</ion-view>

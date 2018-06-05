@@ -1,0 +1,193 @@
+@import "www/css/sass/global";
+
+.address-view-container {
+    background-color: $white-smoke;
+}
+
+.address-view-container .default-address-badge {
+    font-size: 12px;
+    line-height: px2rem(20px);
+    color: $radical-red;
+    position: absolute;
+    left: px2rem(45px);
+    top: px2rem(35px);
+}
+
+.address-view-container .address-phone {
+    margin-left: px2rem(10px);
+}
+
+.address-view-container .address-choose-item .text-pulling {
+    line-height: px2rem(26px);
+    height: px2rem(26px);
+    margin-top: px2rem(9px);
+    width: px2rem(274px);
+}
+
+.address-view-container .address-choose-item .pull-left {
+    float: left;
+}
+
+.address-view-container .address-choose-item p > span {
+    color: $black;
+    font-size: 14px;
+}
+
+.address-view-container .address-choose-item .pull-right {
+    float: right;
+}
+
+.address-view-container .address-left > div {
+    width: px2rem(274px);
+}
+
+.address-view-container div.row .full-address {
+    margin-bottom: 0;
+    color: $black;
+    height: px2rem(42px);
+    font-size: 12px;
+    line-height: px2rem(21px);
+    white-space: normal;
+    text-overflow: -o-ellipsis-lastline;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.address-view-container div.row .default-address-info {
+    position: relative;
+    text-indent: px2rem(42px);
+}
+
+@media screen and (device-width: 320px) and (device-height: 568px){
+    .address-view-container div.row .default-address-info {
+        text-indent: px2rem(50px);
+    }
+}
+
+.address-view-container .address-choose-item {
+    padding: 0;
+    margin: 0;
+    border: none !important;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0);
+}
+
+.address-view-container .address-choose-item:first-child {
+    border-top: none;
+}
+
+.address-view-container .address-choose-item:last-child {
+    border-bottom: none;
+}
+
+.address-view-container .address-choose-item div.row {
+    height: px2rem(85px);
+    padding: 0;
+}
+
+/*.address-choose-item > div.row > div.address-left {
+    border: none;
+}*/
+
+.address-view-container div.row > div.col-center {
+    text-align: center;
+    height: 100%;
+    width: auto;
+    position: relative;
+}
+
+.address-view-container .address-choose-item a.iconfont {
+    position: absolute;
+    top: px2rem(29px);
+    left: px2rem(5px);
+    text-decoration: none;
+    color: $radical-red;
+    font-size: px2rem(30px);
+}
+
+.address-view-container .address-choice {
+    width: px2rem(50px);
+    position: relative;
+    text-align: center;
+}
+
+.address-view-container .address-choice i {
+    visibility: hidden;
+    font-size: 32px;
+    line-height: px2rem(32px);
+    position: relative;
+    top: px2rem(26px);
+    color: #000;
+}
+
+.address-view-container .item-checkbox {
+    padding-left: 0;
+    border: none;
+    visibility: hidden;
+}
+
+.address-view-container i.show-check-box {
+    visibility: visible;
+}
+
+.address-view-container .checkbox input:checked + .checkbox-icon:before {
+    background: $black;
+    border-color: $black;
+}
+
+.address-view-container .address-option-btn {
+    background-color: $white-smoke;
+    color: $radical-red;
+    width: px2rem(85px);
+}
+
+.address-view-container .address-option-btn > div {
+    margin: 0 auto;
+}
+
+.address-view-container .address-option-btn a {
+    display: block;
+    width: px2rem(35px);
+    height: px2rem(35px);
+    border-radius: 50%;
+    background-color: $radical-red;
+    color: $white;
+}
+
+.address-view-container .address-option-btn a > i {
+    font-size: px2rem(30px);
+    line-height: px2rem(35px);
+}
+
+.address-view-container .address-option-btn p {
+    font-size: 12px;
+    line-height: px2rem(22px);
+    color: $radical-red;
+}
+
+.address-view-container .create-address-btn {
+    background-color: #000;
+}
+
+.address-view-container .create-address-btn > a > span {
+    color: #fff;
+}
+
+.address-view-container .item-complex .item-content, .item-radio div.item-content {
+    padding: 0 px2rem(49px) 0 0;
+    background: -webkit-linear-gradient(0, #e5e5e5, #e5e5e5 50%, transparent 50%) bottom right/100% 1px no-repeat;
+    background: -o-linear-gradient(0, #e5e5e5, #e5e5e5 50%, transparent 50%) bottom right/100% 1px no-repeat;
+    background: linear-gradient(0, #e5e5e5, #e5e5e5 50%, transparent 50%) bottom right/100% 1px no-repeat;
+    background-color: #fff;
+}
+
+div.picker-center-highlight span a {
+    width: px2rem(105px)!important;
+}
+
+.address-view-container  ion-option-button:hover, .address-view-container  ion-option-button.activated {
+    border: none;
+}
