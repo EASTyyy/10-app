@@ -1,0 +1,99 @@
+<ion-view view-title="活动" class="activity-2-view-container" ng-class="view.css">
+    <ion-nav-title>
+        <div class="bar bar-header">
+            <youren-back-button></youren-back-button>
+            <h1 class="title" ng-bind="view.title"></h1>
+        </div>
+    </ion-nav-title>
+
+    <div class="bar bar-subheader" style="padding:0" ng-class="{'hide': isHideDateSwitchNode}">
+        <div class="{{dateSwitch.css}}">
+            <ion-scroll direction="x" scrollbar-x="false" scrollbar-y="false" delegate-handle="fixed-Top-Scroller" on-scroll="onFixedTopScrollHandle()">
+                <div class="wrapper" ng-class="{active: $index === selectedIndex}" ng-repeat="item in dateSwitch.data" ng-click="onDateSwitchItemClick($index)">
+                    <div class="text-container">
+                        <span class="date" ng-bind="$index === selectedIndex ? (item.date.month + '月' + item.date.day + '日') : (item.date.month + '.' + item.date.day)"></span>
+                        <span class="text" ng-bind="item.text"></span>
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+    </div>
+    <ion-content class="has-header" delegate-handle="activity-2-scroller" on-scroll="onScrollHandle()" scroll-event-interval="200">
+        <div class="{{banner.css}}">
+            <div class="components-item-wrapper" ng-repeat="item in banner.items" ng-switch="item.link.type">
+                <div class="component-item-container {{item.attr.className}}" style="{{item.attr.style}}">
+                    <a ng-switch-when="no_link">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+                    <a href="{{item.link.value}}" ng-switch-when="absolute_url">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+                    <a my-sref="activity({id: item.link.value.id, template: item.link.value.template})" ng-switch-when="activity">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+
+                    <a my-sref="product({id: item.link.value})" ng-switch-when="product">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="date-switch-container" class="{{dateSwitch.css}}" style="height:70px;">
+            <ion-scroll direction="x" scrollbar-x="false" scrollbar-y="false" delegate-handle="normal-Scroller" on-scroll="onNormalScrollHandle()">
+                <div class="wrapper" ng-class="{active: $index === selectedIndex}" ng-repeat="item in dateSwitch.data" ng-click="onDateSwitchItemClick($index)">
+                    <div class="text-container">
+                        <span class="date" ng-bind="$index === selectedIndex ? (item.date.month + '月' + item.date.day + '日') : (item.date.month + '.' + item.date.day)"></span>
+                        <span class="text" ng-bind="item.text"></span>
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+
+        <div class="{{dateSwitch.title.css}}" ng-if="hasProducts()">
+            <div class="components-item-wrapper">
+                <div class="component-item-container {{dateSwitch.title.attr.className}}" style="{{dateSwitch.title.attr.style}}">
+                    <a> <img ng-src="{{dateSwitch.title.imageUrl}}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-list-style-default" style="min-height:35rem;">
+            <div class="wrapper" ng-repeat="item in products">
+                <a my-sref="product({id: item.id})" class="product-container">
+                    <div class="image-container" ng-class="{'image-pre-order': isPreProduct(item),
+                         'image-sold-out': isSoldOut(item)}">
+                        <img class="image" ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </div>
+                    <span class="name" ng-bind="item.name"></span>
+                    <!--<span class="price" ng-bind="item.price | currency:'&yen; '"></span>-->
+                </a>
+            </div>
+            <div ng-if="isProductsOdd()" class="wrapper">
+                <a class="product-container empty-image-container">
+                    <div class="image-container">
+                        <img class="image" src="img/empty-product.png">
+                    </div>
+                </a>
+            </div>
+
+            <div class="loading-animation-container" ng-if="showLoading && products.length === 0" style="z-index:1000">
+                <div class="loading-animation"><i></i><i></i></div>
+            </div>
+
+        </div>
+
+        <div class="loading-animation-container" ng-if="showLoading && products.length !== 0" style="z-index:1000">
+            <div class="loading-animation"><i></i><i></i></div>
+        </div>
+
+        <div class="no-more-data-container" ng-if="bottomSlogan.state">
+            已经到底了，等我更新吧~
+        </div>
+
+        <ion-infinite-scroll on-infinite="loadProductData()" distance="1%" ng-if="hasMoreData" icon="none" style="height:60px;"></ion-infinite-scroll>
+
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,75 @@
+<ion-view view-title="活动" ng-class="view.css">
+    <ion-nav-title >
+        <div class="bar bar-header">
+            <youren-back-button></youren-back-button>
+            <h1 class="title" ng-bind="view.title"></h1>
+        </div>
+    </ion-nav-title >
+
+
+    <ion-content class="has-header" delegate-handle="activity-101-scroller" on-scroll="onScrollHandle()" scroll-event-interval="200">
+        <div class="{{header.css}}">
+            <div class="components-item-wrapper" ng-repeat="item in header.items" ng-switch="item.link.type">
+                <div class="component-item-container {{item.attr.className}}" style="{{item.attr.style}}">
+                    <a ng-switch-when="no_link">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+                    <a href="{{item.link.value}}" ng-switch-when="absolute_url">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+                    <a my-sref="activity({id: item.link.value})" ng-switch-when="activity">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+
+                    <a my-sref="product({id: item.link.value})" ng-switch-when="product">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="{{title.css}}">
+            <div class="components-item-wrapper" ng-repeat="item in title.items" ng-switch="item.link.type">
+                <div class="component-item-container {{item.attr.className}}" style="{{item.attr.style}}">
+                    <a ng-switch-when="no_link">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                    <a href="{{item.link.value}}" ng-switch-when="absolute_url">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                    <a my-sref="activity({id: item.link.value})" ng-switch-when="activity">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+
+                    <a my-sref="product({id: item.link.value})" ng-switch-when="product">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="{{list.css}}">
+            <div class="wrapper" ng-repeat="item in list.products">
+                <a my-sref="product({id: item.id})" class="product-container">
+                    <div class="image-container" ng-class="{'image-pre-order': isPreProduct(item),
+                         'image-sold-out': isSoldOut(item)}">
+                        <img class="image" ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </div>
+                    <span class="name" ng-bind="item.name"></span>
+                    <span class="price" ng-bind="item.price | currency:'&yen; '"></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="loading-animation-container" ng-if="showLoading">
+            <div class="loading-animation"><i></i><i></i></div>
+        </div>
+
+        <div class="no-more-data-container" ng-if="bottomSlogan.state">
+            已经到底了，等我更新吧~
+        </div>
+
+        <ion-infinite-scroll on-infinite="loadGroupData()" distance="1%" ng-if="hasMoreData" icon="none" style="height:60px;"></ion-infinite-scroll>
+
+    </ion-content>
+</ion-view>

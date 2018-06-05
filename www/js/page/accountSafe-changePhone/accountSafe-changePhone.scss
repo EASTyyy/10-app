@@ -1,0 +1,83 @@
+.change-phone-body {
+	background: #fff;
+}
+.change-phone-cou {
+	width: 100%;
+	background: #fff;
+	overflow: hidden;
+}
+.change-phone-box {
+	overflow: hidden;
+	width: 230px;
+	margin: 0 auto;
+}
+.change-phone-box:nth-child(1) {
+	margin-bottom: 30px;
+	margin-top: 60px;
+	width: 280px;
+	margin-left: auto;
+	mergin-right: auto;
+}
+.change-phone-box:nth-child(1) p {
+	margin: 0px;
+	font-size: 14px;
+	text-indent: 20px;
+}
+.change-phone-box:nth-child(2) {
+	margin-bottom: 20px;
+}
+.change-phone-box #phone, .change-phone-box .check-num {
+	float: left;
+	width: 140px;
+	height: 35px;
+	font-size: 13px;
+	border-top-left-radius: 100px;
+	border-bottom-left-radius: 100px;
+	border: 1px solid #ccc;
+	border-right: none;
+	padding-left: 25px;
+	line-height: normal;
+}
+input::-webkit-input-placeholder { 
+  	
+}
+.change-phone-box .get-checkd-num-btn, .change-phone-box .rest-second {
+	float: left;
+	width: 90px;
+	height: 35px;
+	border: none;
+	font-size: 13px;
+	border-top-right-radius: 100px;
+	border-bottom-right-radius: 100px;
+	border: 1px solid #ccc;
+	border-left: none;
+}
+.change-phone-box .get-checkd-num-btn {
+	background: #fff;
+	border-left: 1px solid #ccc;
+	font-size: 11px;
+}
+.change-phone-box .rest-second {
+	text-align: center;
+	color: red;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 35px;
+}
+.send-changed-phone-box {
+	width: 100%;
+	text-align: center;
+}
+.send-changed-phone-box .send-btn {
+	width: 175px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	border: none;
+	background: #000;
+	color: #fff;
+	font-size: 16px;
+	display: inline-block;
+	margin-top: 40px;
+	border-radius: 100px;
+}

@@ -1,0 +1,41 @@
+<ion-view view-title="修改密码" hide-back-button="true"  class="set-up-view-container">
+	 <ion-nav-title>
+		<div class="bar bar-header">
+			<youren-back-button></youren-back-button>
+			<h1 class="title">修改密码</h1>
+		</div>
+	 </ion-nav-title>
+	<ion-content class="has-header" overflow-scroll="false">
+		<div class="change-pwd-cou">
+			<div class="change-pwd-box">
+				<span class="change-pwd-name">旧&nbsp;&nbsp;&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;码</span>
+				<span class="change-pwd-icon" ng-if="isOldPwdShow">
+					<i class="iconfont" ng-class="{true:'icon-eyes',false:'icon-eyesclosed'}[isShowPwd.isShowOldPwd]">
+				    </i>
+				</span>
+				<input ontouchstart="return false" class="change-pwd-input" type="{{ isShowPwd['isShowOldPwd'] ? 'text' : 'password' }}" id="oldPwd" ng-model="data.oldPwd" placeholder="旧密码" ng-focus="focusOldPwd()" ng-click="toggleShowOldPwd($event)"/>
+			</div>
+			<div class="change-pwd-box">
+				<span class="change-pwd-name">新&nbsp;&nbsp;&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;码</span>
+				<span class="change-pwd-icon" ng-if="isNewPwdShow">
+					<i class="iconfont" ng-class="{true:'icon-eyes',false:'icon-eyesclosed'}[isShowPwd.isShowNewPwd]">
+				    </i>
+				</span>
+				<input ontouchstart="return false" class="change-pwd-input" type="{{ isShowPwd['isShowNewPwd'] ? 'text' : 'password'}}" id="newPwd" ng-model="data.newPwd" placeholder="新密码（6-16位）" ng-focus="focusNewPwd()" ng-blur="blurNewPwd()" maxlength="16" ng-keyup="checkNewPwd($event)" ng-click="toggleShowNewPwd($event)"/>
+			</div>
+			<div class="change-pwd-box">
+				<span class="change-pwd-name">确认新密码</span>
+				<span class="change-pwd-icon" id="change-surepwd-icon" ng-if="isSurePwdShow">
+					<i class="iconfont" ng-class="{true:'icon-eyes',false:'icon-eyesclosed'}[isShowPwd.isShowSurePwd]">
+				    </i>
+				</span>
+				<input ontouchstart="return false" class="change-pwd-input" type="{{ isShowPwd['isShowSurePwd'] ? 'text' : 'password'}}" id="surePwd" ng-model="data.surePwd" placeholder="确认新密码（6-16位）" ng-disabled="isSurePwdDisabled" ng-focus="focusSurePwd()" ng-blur="blurSurePwd()" maxlength="16" ng-click="toggleShowSurePwd($event)"/>
+				<div class="surepwdbg" ng-if="isSurePwdDisabled"></div>
+			</div>
+			<div class="send-changed-pwd-cou">
+				<button class="send-btn" ng-click="sendChangePwd()">确认</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
+

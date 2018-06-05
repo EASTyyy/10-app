@@ -1,0 +1,29 @@
+<ion-view view-title="更换手机号码" hide-back-button="true"  class="set-up-view-container">
+	<ion-nav-title>
+		<div class="bar bar-header">
+			<youren-back-button></youren-back-button>
+			<h1 class="title">更换手机号码</h1>
+		</div>
+	</ion-nav-title>
+	<ion-content class="has-header change-phone-body">
+		<div class="change-phone-cou">
+			<div class="change-phone-box">
+				<p>手机号码更换后,可以使用新手机号登录,</p>
+				<p>当前手机号：{{ userPhone }}</p>
+			</div>
+			<div class="change-phone-box">
+				<input type="number" ng-model="data.phone" id="phone" ng-disabled="isPhoneInputDisabled" placeholder="请输入手机号码"/>
+				<button class="get-checkd-num-btn" ng-disabled="isGetCheckedNumBtnDisabled" ng-click="getCheckedNum()">
+					发送验证码
+				</button>
+			</div>
+			<div class="change-phone-box">
+				<input class="check-num" type="number" ng-model="data.checkNum" placeholder="请输入验证码"/>
+				<span class="rest-second" style="color:red;"><strong id="restTime"></span>
+			</div>
+			<div class="send-changed-phone-box">
+				<button class="send-btn" ng-click="sendChangePhone()">确认</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

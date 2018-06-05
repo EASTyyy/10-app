@@ -1,0 +1,21 @@
+<ion-view view-title="账户设置" hide-back-button="true"  class="set-up-view-container">
+    <ion-nav-title>
+    	<div class="bar bar-header">
+    		<youren-back-button></youren-back-button>
+    		<h1 class="title">账户设置</h1>
+    	</div>
+    </ion-nav-title>
+	<ion-content class="setUp has-header" overflow-scroll="false">
+		<div class="list">
+        	<a class="item item-icon-right one-px-border" my-sref="accountChangePass">
+                <span>修改密码</span>
+                <i class="icon iconfont icon-rightarrow"></i>
+            </a>
+            <a class="item item-icon-right" my-sref="accountChangePhone">
+                <span>更换手机号码</span>
+                <span class="accountSafe-chose-userPhone text-pull-right">{{ userPhone }}</span>
+                <i class="icon iconfont icon-rightarrow"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
