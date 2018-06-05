@@ -1,0 +1,83 @@
+// Include variables sass
+@import "www/css/sass/global";
+
+/*about-us*/
+.about-us-view-container .about-us{
+    background-color: white;
+}
+
+.about-us-view-container .padding{
+    text-align: center;
+}
+
+.about-us-view-container .padding > img{
+    width: px2rem(60px);
+    height: auto;
+}
+
+.about-us-view-container .about-us .list .item h2 {
+    
+    white-space: normal;
+    
+}
+
+.about-us-view-container .about-us-bottom {
+    text-align: center;
+    color: #b2b2b2;
+    background-image: none;
+    padding: 0;
+}
+
+.about-us-view-container .about-us-bottom p {
+    width: 100%;
+    position: fixed;
+    bottom: px2rem(2px);
+}
+
+.about-us-view-container .about-us .list {
+    overflow: hidden;
+    border-radius: px2rem(1px);
+}
+
+.about-us-view-container .about-us>img {
+    width: px2rem(60px);
+    height: px2rem(15px);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: px2rem(-30px);
+}
+
+.about-us-view-container .about-us-top {
+    text-align: center;
+    margin: px2rem(100px) auto px2rem(30px);
+}
+
+.about-us-view-container .about-us-top > img {
+    width: px2rem(75px);
+    height: px2rem(75px);
+}
+
+.about-us-view-container .about-us-mid {
+    overflow: hidden;
+    margin: auto;
+    width: px2rem(250px);
+    text-align: center;
+    color: #555;
+    margin-top: px2rem(10px);
+}
+
+.about-us-view-container .about-us-mid p{
+    margin-bottom: px2rem(15px);
+    font-size: 14px;
+}
+
+.about-us-view-container div.loading-container div.loading{
+    background-color: transparent;
+}
+
+
+
+
+
+
