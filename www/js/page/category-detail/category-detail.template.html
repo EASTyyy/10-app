@@ -1,0 +1,75 @@
+<ion-view view-title="分类" class="category-detail-view-container">
+    <ion-nav-title>
+        <div class="bar bar-header">
+            <youren-back-button></youren-back-button>
+            <h1 class="title" ng-bind="title"></h1>
+        </div>
+    </ion-nav-title>
+    <div class="bar bar-subheader sort-subheader" ng-if="hasData">
+
+    	<ul class="row">
+            <li class="col" ng-class="{active: isSortKeyActived('new', 'desc')}" ng-click="sortBy('new', 'desc')">最新上线</li>
+            <li class="col" ng-class="{active: isSortKeyActived('hot', 'desc')}" ng-click="sortBy('hot', 'desc')">销量优先</li>
+            <li class="col" ng-if="isShowPriceState('price', 'null')" ng-click="sortBy('price', 'asc')">价格
+                <span class="sort-arrow-container">
+                    <i class="icon iconfont icon-sortup"></i>
+                    <i class="icon iconfont icon-sortdown"></i>
+                </span>
+            </li>
+
+            <li class="col active" ng-if="isShowPriceState('price', 'asc')" ng-click="sortBy('price', 'desc')">价格低到高
+                <span class="sort-arrow-container down">
+                    <i class="icon iconfont icon-sortup"></i>
+                    <i class="icon iconfont icon-sortdown"></i>
+                </span>
+            </li>
+
+            <li class="col active" ng-if="isShowPriceState('price', 'desc')" ng-click="sortBy('price', 'asc')">价格高到低
+                <span class="sort-arrow-container up">
+                    <i class="icon iconfont icon-sortup"></i>
+                    <i class="icon iconfont icon-sortdown"></i>
+                </span>
+            </li>
+       </ul>
+    </div>
+
+    <ion-content class="has-header" ng-class="{'has-subheader':!isProductsEmpty()}" overflow-scroll='false' on-scroll="onScrollHandle()" delegate-handle="category-detail-scroller" scroll-event-interval="200">
+
+		<div class="product-list-style-default" ng-if="!isProductsEmpty()">
+            <div class="wrapper" ng-repeat="product in products" my-sref="product({id:product.id})">
+                <a class="product-container">
+                    <div class="image-container" ng-class="{'image-pre-order': isPreProduct(product),
+                         'image-sold-out': isSoldOut(product)}">
+                        <img class="image" ng-src="{{product.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </div>
+                    <span class="name" ng-bind="product.name"></span>
+                    <!--<span class="price" ng-bind="product.price | currency:'&yen; '"></span>-->
+                </a>
+            </div>
+            <div ng-if="isProductsOdd()" class="wrapper">
+                <a class="product-container">
+                    <div class="image-container">
+                        <img class="image" src="img/empty-product.png">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+		<div class="no-more-data-container" ng-if="bottomSlogan.state">
+            已经到底了，等我更新吧~
+        </div>
+
+        <div class="loading-animation-container" ng-if="showLoading">
+            <div class="loading-animation"><i></i><i></i></div>
+        </div>
+
+        <ion-infinite-scroll immediate-check="false" on-infinite="loadMore()" distance="1%" ng-if="hasMoreData" icon="none" style="height:60px;"></ion-infinite-scroll>
+
+    </ion-content>
+
+    <div class="empty-content-container" ng-if="isShowEmpty">
+        <div class="empty-image"></div>
+        <div class="empty-text"></div>
+    </div>
+
+</ion-view>

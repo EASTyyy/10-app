@@ -1,0 +1,10 @@
+// Include variables sass
+@import "www/css/sass/variables";
+
+.category-detail-view-container .scroll{
+    height: inherit;
+}
+
+.category-detail-view-container .empty-content-container{
+    z-index: 99;
+}
