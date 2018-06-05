@@ -1,0 +1,137 @@
+// Include variables sass
+@import "www/css/sass/global";
+.home-content-container.overflow-scroll .scroll {
+    position: absolute;
+}
+
+.home-view-container .slide-item-container {
+    display: block;
+    position: relative;
+    padding-bottom: 60%;
+    width: 100%;
+}
+
+.home-view-container .slide-item-container .slide-item-image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.home-view-container .slider-pager {
+    bottom: px2rem(10px);
+}
+
+.home-view-container .slider-pager .slider-pager-page {
+    margin: 0;
+    color: $whisper;
+    opacity: 1;
+}
+
+.home-view-container .slider-pager .slider-pager-page.active {
+    color: $black;
+}
+
+.home-view-container .slider-pager .slider-pager-page .ion-record {
+    font-size: 10px;
+}
+
+.home-view-container .recommend-container {
+    background-color: $white;
+}
+
+.home-view-container .recommend-title {
+    position: relative;
+    height: px2rem(40px);
+}
+
+.home-view-container .recommend-title .sprites-home-top,
+.home-view-container .recommend-title .sprites-home-top-line,
+.home-view-container .recommend-title .sprites-home-vogue,
+.home-view-container .recommend-title .sprites-home-vogue-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-view-container .recommend-item {
+    display: block;
+    position: relative;
+}
+
+.home-view-container .recommend-item-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.home-view-container .first-level .recommend-content {
+    margin: 0 px2rem(5px);
+}
+
+.home-view-container .first-level .recommend-item {
+    float: left;
+    margin: 0 px2rem(5px) px2rem(15px) px2rem(5px);
+    width: px2rem(172.5px);
+    height: px2rem(80px);
+}
+
+.home-view-container .recommend-container.second-level {
+    margin-top: px2rem(5px);
+}
+
+.home-view-container .second-level .recommend-item {
+    width: px2rem(375px);
+    height: px2rem(295px);
+}
+
+.home-view-container .third-level-header .recommend-item {
+    width: px2rem(375px);
+    height: px2rem(250px);
+}
+
+.home-view-container .recommend-content.third-level-main {
+    padding: px2rem(8px) px2rem(8px) px2rem(15px) px2rem(8px);
+    width: px2rem(375px);
+    height: px2rem(138px);
+}
+
+.home-view-container .third-level-main .recommend-item {
+    float: left;
+    margin-right: px2rem(7px);
+    width: px2rem(115px);
+    height: px2rem(115px);
+}
+
+.home-view-container .third-level-main .recommend-item:last-of-type {
+    margin-right: 0;
+}
+
+.home-view-container .recommend-container.four-level {
+    background-color: $white-smoke;
+}
+
+.home-view-container .four-level .goods-list-container {
+    margin: px2rem(5px) px2rem(5px) px2rem(10px) px2rem(5px);
+}
+
+.home-view-container .loading-animation-container {
+    top: px2rem(-15px);
+}
+
+.home-view-container .bar.bar-header .search-container .search-input{
+    padding-left: 32px;
+}
+
+.pane .bar.bar-header .icon-category{
+    top: 2px;
+}
+
+ion-nav-view[name='tab-home'] .my-message-alert:after {
+    top: 7%;
+    right: 6%;
+}
+
+.home-content-container div.refresh-box div.refresh-text-box > div.cover-panel {
+    background-color: #F2F2F2;
+}

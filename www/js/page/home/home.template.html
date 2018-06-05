@@ -1,0 +1,212 @@
+<ion-view view-title="首页" class="{{view.css}}">
+    <ion-nav-title>
+        <div class="bar bar-header">
+            <i class="icon iconfont icon-category" ng-click="gotoStateIfAllowed('category', {})"></i>
+            <div class="search-container">
+                <!--<input type="text" class="search-input" ng-focus="jumpToSearch()">-->
+                <div class="search-input" ng-click="gotoStateIfAllowed('search', {})" style="color: #b2b2b2;">搜索</div>
+                <i class="icon iconfont icon-search"></i>
+            </div>
+            <i class="icon iconfont icon-message icon-right notification" my-sref="message" ng-class="{ 'my-message-alert': messageAlert }"></i>
+        </div>
+    </ion-nav-title>
+
+    <ion-content class="has-header home-content-container" delegate-handle="home-scroller" overflow-scroll="true" on-scroll="onScrollHandle()">
+        <ion-refresher ng-if="initialized" pulling-text="" disable-pulling-rotation=true pulling-icon="none" spinner="none" on-pulling="onPullDown()"
+            on-refresh="refreshData()"></ion-refresher>
+        <div ng-if="initialized" class="refresh-box">
+            <div>
+                <div class="refresh-num-box">
+                    <img class="left-img left-point" src="img/loading/refreshing-1.png">
+                    <img class="left-img right-point" src="img/loading/refreshing-2.png">
+                </div>
+                <div class="refresh-text-box">
+                    <img src="img/loading/refreshing-3.png">
+                    <div class="cover-panel"></div>
+                </div>
+            </div>
+        </div>
+        <div class="{{banner.css}}">
+            <ion-slide-box show-pager="true" does-continue="true" auto-play="false">
+                <ion-slide ng-repeat="item in banner.items" ng-switch="item.link.type" style="width: 100vw;">
+                    <a class="slide-item-container" ng-switch-when="no_link">
+                        <img class="slide-item-image" ng-src="{{item.imageUrl}}" watch-src="item.imageUrl" size="big" spinner-on-load alt="">
+                    </a>
+
+                    <a class="slide-item-container" href="{{item.link.value}}" ng-switch-when="absolute_url">
+                        <img class="slide-item-image" ng-src="item.imageUrl}}" watch-src="item.imageUrl" size="big" spinner-on-load alt="">
+                    </a>
+                    <a class="slide-item-container" ng-click="gotoStateIfAllowed('activity', {id: item.link.value.id, template: item.link.value.template })"
+                        ng-switch-when="activity">
+                        <img class="slide-item-image" ng-src="{{item.imageUrl}}" watch-src="item.imageUrl" size="big" spinner-on-load alt="">
+                    </a>
+                    <a class="slide-item-container" ng-click="gotoStateIfAllowed('product', {id: item.link.value})" ng-switch-when="product">
+                        <img class="slide-item-image" ng-src="{{item.imageUrl}}" watch-src="item.imageUrl" size="big" spinner-on-load alt="">
+                    </a>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+
+        <div class="{{topTitle.css}}">
+            <div class="components-item-wrapper" ng-repeat="item in topTitle.items" ng-switch="item.link.type">
+                <div class="component-item-container {{item.attr.className}}" style="{{item.attr.style}}">
+                    <a ng-switch-when="no_link">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                    <a href="{{item.link.value}}" ng-switch-when="absolute_url">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                    <a ng-click="gotoStateIfAllowed('activity', {id: item.link.value.id, template: item.link.value.template})" ng-switch-when="activity">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                    <a ng-click="gotoStateIfAllowed('product', {id: item.link.value})" ng-switch-when="product">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="{{topContent.css}}">
+            <div class="components-item-wrapper" ng-repeat="item in topContent.items" ng-switch="item.link.type">
+                <div class="component-item-container {{item.attr.className}}" style="{{item.attr.style}}">
+                    <a ng-switch-when="no_link">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load alt="">
+                    </a>
+                    <a href="{{item.link.value}}" ng-switch-when="absolute_url">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load alt="">
+                    </a>
+                    <a ng-click="gotoStateIfAllowed('activity', {id: item.link.value.id, template: item.link.value.template})" ng-switch-when="activity">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load alt="">
+                    </a>
+                    <a ng-click="gotoStateIfAllowed('product', {id: item.link.value})" ng-switch-when="product">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="{{vogueTitle.css}}">
+            <div class="components-item-wrapper" ng-repeat="item in vogueTitle.items" ng-switch="item.link.type">
+                <div class="component-item-container {{item.attr.className}}" style="{{item.attr.style}}">
+                    <a ng-switch-when="no_link">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+
+                    <a href="{{item.link.value}}" ng-switch-when="absolute_url">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                    <a ng-click="gotoStateIfAllowed('activity', {id: item.link.value.id, template: item.link.value.template})" ng-switch-when="activity">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                    <a ng-click="gotoStateIfAllowed('product', {id: item.link.value})" ng-switch-when="product">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="{{vogueContent.css}}">
+            <div class="components-item-wrapper" ng-repeat="item in vogueContent.items" ng-switch="item.link.type">
+                <div class="component-item-container {{item.attr.className}}" style="{{item.attr.style}}">
+                    <a ng-switch-when="no_link">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+                    <a href="{{item.link.value}}" ng-switch-when="absolute_url">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+                    <a ng-click="gotoStateIfAllowed('activity', {id: item.link.value.id, template: item.link.value.template})" ng-switch-when="activity">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+                    <a ng-click="gotoStateIfAllowed('product', {id: item.link.value})" ng-switch-when="product">
+                        <img ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="{{slideContent.css}}">
+            <div class="components-item-wrapper" ng-switch="slideContent.link.type">
+                <div class="component-item-container {{slideContent.attr.className}}" style="{{slideContent.attr.style}}">
+                    <a ng-switch-when="no_link">
+                        <img ng-src="{{slideContent.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+
+                    <a href="{{slideContent.link.value}}" ng-switch-when="absolute_url">
+                        <img ng-src="{{slideContent.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+
+                    <a ng-click="gotoStateIfAllowed('activity', {id: slideContent.link.value.id, template: slideContent.link.value.template})" ng-switch-when="activity">
+                        <img ng-src="{{slideContent.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+
+                    <a ng-click="gotoStateIfAllowed('product', {id: slideContent.link.value})" ng-switch-when="product">
+                        <img ng-src="{{slideContent.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </a>
+
+                </div>
+            </div>
+            <div class="slider-wrapper">
+                <div class="scroll-x-container">
+                    <a class="link" ng-repeat="item in slideContent.products" ng-click="gotoStateIfAllowed('product', {id: item.id})">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="{{listTitle.css}}">
+            <div class="components-item-wrapper" ng-repeat="item in listTitle.items" ng-switch="item.link.type">
+                <div class="component-item-container {{item.attr.className}}" style="{{item.attr.style}}">
+                    <a ng-switch-when="no_link">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                    <a href="{{item.link.value}}" ng-switch-when="absolute_url">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                    <a ng-click="gotoStateIfAllowed('activity', {id: item.link.value.id, template: item.link.value.template})" ng-switch-when="activity">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                    <a ng-click="gotoStateIfAllowed('product', {id: item.link.value})" ng-switch-when="product">
+                        <img ng-src="{{item.imageUrl}}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="{{list.css}}">
+            <div class="wrapper" ng-repeat="item in products">
+                <a ng-click="gotoStateIfAllowed('product', {id: item.id})" class="product-container">
+                    <div class="image-container" ng-class="{'image-pre-order': isPreProduct(item),
+                         'image-sold-out': isSoldOut(item)}">
+                        <img class="image" ng-src="{{item.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </div>
+                    <span class="name" ng-bind="item.name"></span>
+                    <!--<span class="price" ng-bind="item.price | currency:'&yen; '"></span>-->
+                </a>
+            </div>
+            <div ng-if="isProductsOdd()" class="wrapper">
+                <a class="product-container">
+                    <div class="image-container">
+                        <img class="image" src="img/empty-product.png">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="loading-animation-container" ng-if="showLoading">
+            <div class="loading-animation"><i></i><i></i></div>
+        </div>
+
+        <div class="no-more-data-container" ng-if="bottomSlogan.state">
+            已经到底了，等我更新吧~
+        </div>
+
+        <ion-infinite-scroll on-infinite="loadRecommendedProducts()" distance="2000" ng-if="hasMoreData && !isUnauthorized"
+            icon="none" style="height: 60px;"></ion-infinite-scroll>
+
+        <ion-infinite-scroll on-infinite="loadRecommendedProducts()" distance="-10px" ng-if="hasMoreData && isUnauthorized"
+            icon="none" style="height: 1px"></ion-infinite-scroll>
+
+    </ion-content>
+</ion-view>
