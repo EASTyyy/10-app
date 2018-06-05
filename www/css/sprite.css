@@ -1,0 +1,189 @@
+.sprites-WBB {
+  display: inline-block;
+  width: calc(5.90625rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-5.96875rem) calc(0rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WBQ {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-5.90625rem) calc(-14.125rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WBX {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-23.75rem) calc(-4.6875rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WCS {
+  display: inline-block;
+  width: calc(5.90625rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(0rem) calc(-4.71875rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WDD {
+  display: inline-block;
+  width: calc(5.90625rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-5.96875rem) calc(-4.71875rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WDK {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-17.71875rem) calc(-14.125rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WFY {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-17.84375rem) calc(0rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WKS {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(0rem) calc(-18.8125rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WLY {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-5.90625rem) calc(-18.8125rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WMF {
+  display: inline-block;
+  width: calc(5.90625rem);
+  height:calc(4.65625rem);
+  background: url(sprite.png) no-repeat calc(0rem) calc(0rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WMJ {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-17.84375rem) calc(-4.6875rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WMX {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-17.84375rem) calc(-9.375rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WMY {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(0rem) calc(-14.125rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WMZ {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-5.90625rem) calc(-23.5rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WNZ {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-11.8125rem) calc(-14.125rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WPC {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.65625rem);
+  background: url(sprite.png) no-repeat calc(0rem) calc(-9.40625rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WPY {
+  display: inline-block;
+  width: calc(5.875rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-11.8125rem) calc(-9.40625rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WSY {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-11.9375rem) calc(-4.71875rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WTX {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-11.8125rem) calc(-18.8125rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WTZ {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-17.71875rem) calc(-18.8125rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WWJ {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-23.75rem) calc(0rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WWT {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.65625rem);
+  background: url(sprite.png) no-repeat calc(-11.9375rem) calc(0rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WWY {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-23.75rem) calc(-9.375rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WXF {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-23.75rem) calc(-14.0625rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WXX {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(-23.75rem) calc(-18.75rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WXZ {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.625rem);
+  background: url(sprite.png) no-repeat calc(0rem) calc(-23.5rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
+.sprites-WYR {
+  display: inline-block;
+  width: calc(5.84375rem);
+  height:calc(4.65625rem);
+  background: url(sprite.png) no-repeat calc(-5.90625rem) calc(-9.40625rem);
+  background-size: calc(29.59375rem) calc(28.125rem);
+}
