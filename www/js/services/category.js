@@ -26,12 +26,12 @@
       
       
       /**
-			 * 获取分类详情数据
-			 * @param limit	请求数量
-			 * @param type 类别
-			 * @param sort 排序字段
-			 * @param order	排序方式
-			 */
+       * 获取分类详情数据
+       * @param limit	请求数量
+       * @param type 类别
+       * @param sort 排序字段
+       * @param order	排序方式
+       */
       this.getDetailList = function(offset,limit,type,sort,order){
       	return $http.get(CATEGORY_API_URL,{
 					params:{
