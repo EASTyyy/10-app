@@ -1,0 +1,304 @@
+<ion-view view-title="详情" hide-nav-bar="true" class="product-view-container">
+
+    <div class="right-more-detail-bg" ng-click="onToggleMoreDetailShowClick()" ng-if="isMoreDetailShow"></div>
+    <div class="top-header-container">
+        <div class="left-arrow ios-left-arrow" ng-click="back()">
+            <div class="left-arrow-bg"></div>
+            <i class="icon iconfont icon-leftarrow"></i>
+        </div>
+        <div class="title ios-title" ng-style="opacity">商品详情</div>
+        <div class="right-more ios-right-more" ng-click="onToggleMoreDetailShowClick()">
+            <div class="right-more-bg"></div>
+            <i class="icon iconfont icon-more"></i>
+        </div>
+        <div class="right-more-detail" ng-class='{true: "show-right-more-detail", false: "hidden-right-more-detail"}[isMoreDetailShow]'>
+            <div ng-click="onGotoHomeBtnClick()">
+                <i class="icon iconfont icon-home"></i>
+                回到首页
+            </div>
+            <div class="right-more-line"></div>
+            <div ng-click="onGotoMessageBtnClick()">
+                <i class="icon iconfont icon-message"></i>
+                消息
+            </div>
+        </div>
+    </div>
+
+    <div class="org-pos" ng-class="{'thumbnail-to-cart': isProductMove}" ng-if="isProductMove">
+        <img ng-src="{{pictureUrl}}" ng-if="isCurrentPageActived">
+    </div>
+
+
+    <ion-content id="product-{{productId}}" class="product-content" on-scroll="onContentScrolling()" overflow-scroll="true"
+                 delegate-handle="product-Detail-Scroll">
+        <div class="ion-slide-box-wrapper">
+            <ion-slide-box id="slideBox" delegate-handle="product-slide-box" on-slide-changed="slideHasChanged($index)" active-slide="slideIndex" ng-click="showImageModal()">
+                <ion-slide ng-repeat="picture in product.pictures">
+                    <img class="full-image" ng-src="{{picture.file_url + IMAGE_MODE.PRODUCT_DETAIL}}" spinner-on-load size="big" ng-if="isCurrentPageActived">
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+
+        <div class="product-info-container">
+            <p class="product-name" ng-bind="product.name"></p>
+            <p class="product-choose-price">
+                <span>&yen;</span>
+                <span ng-bind="firstPrice"></span>
+                <span>.</span>
+                <span ng-bind="lastPrice"></span>
+                <span ng-if="isOrder">预定款</span>
+            </p>
+
+            <p class="product-attribute" ng-if="showProductAttribute && (isOrder || product.stock !== undefined)">
+                <span ng-if="isProductAttribute(product.flag)">七天无理由包退换</span>
+                <span ng-if="!isProductAttribute(product.flag)">不支持七天无理由包退换</span>
+            </p>
+            <p>
+                <i class="icon iconfont icon-authenticated"></i>
+                <span>买手精选</span>
+                <i class="icon iconfont icon-authenticated"></i>
+                <span>顺丰包邮</span>
+            </p>
+        </div>
+
+        <div class="suit-container" ng-if="product.suit_items.length > 0">
+            <div>搭配推荐</div>
+
+            <div class="suit-item-list-wrapper">
+                <div class="scroll-x-container">
+                    <a ng-repeat="product in product.suit_items" ng-click="onGotoProductBtnClick(product.productId)">
+                        <img ng-src="{{product.pictures[0].file_url+IMAGE_MODE.LIST}}" ng-if="isCurrentPageActived"/><p ng-if="!$last">+</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="product-info-title" ng-if="!!product.video">
+            <p>商品详情</p>
+        </div>
+
+        <div id="video-container-product-{{productId}}" class="video-container" ng-show="!!product.video" >
+            <div class="video-transparent-mask" ng-click="player.onVideoContainerClickHandle()"></div>
+            <div class="video-poster-container" ng-if="player.isNotPlayed || player.isEnd">
+                <img ng-src="{{poster}}" alt="">
+            </div>
+            <div class="video-replay-container" ng-if="player.isEnd">
+                <div class="video-replay-controls" ng-click="player.play()">
+                    <i class="iconfont icon-refresh"></i>
+                    <span class="video-replay-text">重播</span>
+                </div>
+            </div>
+            <div class="video-controls" ng-class="{'hide': player.isProgressBarHide}">
+                <div class="video-control-button">
+                    <i class="iconfont icon-stop" ng-click="player.pause()" ng-if="player.isPlaying()"></i>
+                    <i class="iconfont icon-play" ng-click="player.play()" ng-if="!player.isPlaying()"></i>
+                </div>
+                <div class="video-playing-time-container">
+                    <span class="video-playing-time" ng-bind="player.displayPlayingTime()"></span>
+                </div>
+                <div class="progress-bar" ng-touchstart="player.onProgressBarTouchStartHandle($event)" ng-touchmove="player.onProgressBarTouchMoveHandle($event)"
+                    ng-touchend="player.onProgressBarTouchEndHandle($event)">
+                    <div class="power" style="width: {{player.caclProgress()}}%">
+                        <div class="peer-container"><span class="peer"></span></div>
+                    </div>
+                    <div class="progress-bar-background"></div>
+                </div>
+                <div class="video-remaining-time-container">
+                    <span class="video-remaining-time" ng-bind="player.displayVideoTime()"></span>
+                </div>
+            </div>
+            <!--屏幕中间的按钮-->
+            <div class="btn-cou-center" ng-click="player.play()" ng-show="!player.isPlaying()&& !player.isEnd">
+                <i class="icon iconfont icon-live"></i>
+            </div>
+        </div>
+
+
+        <div class="product-detail-container">
+            <!---->
+            <img class="full-image" ng-repeat="picture in product.detailPictures" ng-src="{{picture.file_url+IMAGE_MODE.PRODUCT_DETAIL}}"
+                ng-if="isCurrentPageActived" watch-src="picture.file_url+IMAGE_MODE.PRODUCT_DETAIL" size="big" spinner-on-load>
+        </div>
+
+        <div class="product-service-container">
+            <div class="service-explain">
+                <div class="product-title one-px-border">服务说明</div>
+                <div class="product-service-content">
+                    <div class="product-item">
+                        <div class="product-item-icon"><i class="icon iconfont icon-refund"></i></div>
+                        <div class="product-item-content">
+                            <h4>无忧售后</h4>
+                            <p>活动期间，活动商品（商品标题中含“包退换”标签）享受7天无理由第一手100%退换货，非活动商品非质量问题不允许退换货。恶意退货将不被受理。（详见售后政策）</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-item-icon"><i class="icon iconfont icon-global"></i></div>
+                        <div class="product-item-content">
+                            <h4>平价销售</h4>
+                            <p>全球市场直采，品质保障，价格优惠</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-item-icon"><i class="icon iconfont icon-speed"></i></div>
+                        <div class="product-item-content">
+                            <h4>极速直达</h4>
+                            <p>活动期间，全场顺丰包邮（非预售商品16：30前付款当天发货）</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-item-icon"><i class="icon iconfont icon-people"></i></div>
+                        <div class="product-item-content">
+                            <h4>1对1专属顾问</h4>
+                            <p>1对1专属时尚顾问，提供搭配，采购专业建议</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="service-explain" ng-if="isOrder">
+                <div class="product-title one-px-border">预订款采购说明</div>
+                <div class="product-service-content">
+                    <div class="product-item">
+                        <div class="product-item-icon"><i class="icon iconfont icon-time"></i></div>
+                        <div class="product-item-content">
+                            <h4>发货时间</h4>
+                            <p>预定商品一般下单后3天-7天左右发货，特殊商品以页面说明为准，到货后将第一时间发货，请耐心等待</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-item-icon"><i class="icon iconfont icon-question"></i></div>
+                        <div class="product-item-content">
+                            <h4>发货是否有保证</h4>
+                            <p>一般情况下预定款下单后都会有货，但是不排除个别款因厂家不再生产而无货，如果出现此情况，时尚顾问会第一时间告知您并为您办理退款</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-item-icon"><i class="icon iconfont icon-wallet"></i></div>
+                        <div class="product-item-content">
+                            <h4>付款后不想要了是否可以退款</h4>
+                            <p>预定款付款后7天内是不允许申请退款的，7天后若还未发货，您可以申请取消订单，平台会及时核实并为您办理退款</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-item-icon"><i class="icon iconfont icon-swap"></i></div>
+                        <div class="product-item-content">
+                            <h4>收到货后是否可以退货</h4>
+                            <p>预定款非质量问题不允许退换货</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="service-tips">
+                <div class="product-title">温馨提示</div>
+                <div class="product-service-content">
+                    <div class="product-item">
+                        <div class="product-item-icon"><i class="icon iconfont icon-wallet"></i></div>
+                        <div class="product-item-content">
+                            <h4>尽快付款</h4>
+                            <p>商品库存紧张，拍下订单请在15分钟内完成付款，否则订单会自动取消，稍作迟疑货可能就被其他人抢走了哦！</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-item-icon"><i class="icon iconfont icon-question"></i></div>
+                        <div class="product-item-content">
+                            <h4>遇到问题怎么办？</h4>
+                            <p>如果遇到超额不能支付等问题，请随时联系您的时尚顾问，第一时间会为您解决；</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-recommend-container" ng-if="isShowRecommend()">
+            <div class="product-recommend-title">
+                <div class="left-line"></div>
+                <span>猜你喜欢</span>
+                <div class="right-line"></div>
+            </div>
+            <!--<div class="product-recommend-list">
+                <div class="recommend" ng-repeat="recommend in product.related_product"
+                     ng-click="onGotoProductBtnClick(recommend.productId)">
+                    <img class="full-image"  ng-src="{{recommend.pictures[0].file_url}}">
+                    <p ng-bind="recommend.name"></p>
+                </div>
+            </div>-->
+            <div class="product-recommend-list">
+                <div class="wrapper" ng-repeat="item in product.related_product">
+                    <a ng-click="onGotoProductBtnClick(item.productId)" class="product-container">
+                        <div class="image-container">
+                            <img class="image" ng-src="{{item.pictures[0].file_url + IMAGE_PARAMS}}" spinner-on-load size="big" alt="" ng-if="isCurrentPageActived">
+                        </div>
+                        <span class="name" ng-bind="item.name"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+    <ion-footer-bar>
+        <div class="go-top" ng-click="onScrollTopBtnClick(true)" ng-if="isScrolled">
+            <i class="icon iconfont icon-up"></i>
+            <p>置顶</p>
+        </div>
+        <div class="row">
+            <div class="left-button" ng-class="{'normal': product.stock > 0 && isOrder!== null && !isOrder}">
+                <div>
+                    <a my-sref="customer-service">
+                        <i class="icon iconfont icon-contactus"></i>
+                        <p>客服</p>
+                    </a>
+                </div>
+
+                <div ng-class="{'collected': collectGoods}"
+                     ng-click="onProductCollectBtnClick()">
+                    <div ng-class="{'favorite-true': favorite!=null && favorite,
+                                  'favorite-false': favorite!=null && !favorite}">
+                        <i class="icon iconfont icon-myfavorite"></i>
+                    </div>
+                    <p>收藏</p>
+                </div>
+                <div ng-click="onCartBtnClick()">
+                    <div>
+                        <i class="icon iconfont icon-shoppingcart" ng-class="{true: 'shopping-cart'}[cartCount>=100]">
+                            <span class="cart-num" ng-bind="cartCount" ng-if="cartCount>0 && cartCount<100"></span>
+                        </i>
+                    </div>
+                    <p>购物袋</p>
+                </div>
+
+            </div>
+
+            <div class="right-button">
+                <div ng-if="!isShelved">
+                    <div ng-if="product.stock > 0 && isOrder!== null && !isOrder">
+                        <button type="button" class="button button-primary normal" ng-click="onShowModalBtnClick()">加入购物袋</button>
+                        <button type="button" class="button button-block normal" ng-click="buyProductsImmediately()">立即购买</button>
+                    </div>
+                    <button type="button" class="button button-primary" ng-click="onShowModalBtnClick()" ng-if="isOrder!== null && isOrder">预定购买</button>
+                    <button type="button" class="button button-block" disabled ng-if="product.stock <= 0 && isOrder!== null && !isOrder">已售罄</button>
+                </div>
+
+                <div ng-if="isShelved">
+                    <button type="button" class="button button-block" disabled>已下架</button>
+                </div>
+            </div>
+        </div>
+    </ion-footer-bar>
+
+    <div class="product-modal-container animated" ng-class="{true: 'modal-show zoomIn', false: 'modal-hide zoomOut'}[isModalShow]"
+         ng-click="hideImageModal()">
+        <div id="product-modal-{{productId}}" class="product-modal-wrapper">
+            <ion-slide-box delegate-handle="modal-slide-box" on-slide-changed="slideHasChanged($index)" show-pager="false" active-slide="slideIndex">
+                <ion-slide ng-repeat="picture in product.pictures">
+                    <ion-scroll delegate-handle="ion-scroll-{{$index}}" zooming="true" direction="xy" min-zoom="1" overflow-scroll="false">
+                        <img class="full-image" ng-src="{{picture.file_url + '?text=' + $index}}" ng-if="isCurrentPageActived">
+                    </ion-scroll>
+                </ion-slide>
+            </ion-slide-box>
+            <span class="page" ng-bind-template="{{slideIndex + 1}} / {{ product.pictures.length }}"></span>
+        </div>
+    </div>
+</ion-view>

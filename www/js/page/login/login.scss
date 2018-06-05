@@ -1,0 +1,122 @@
+// Include variables sass
+@import "www/css/sass/global";
+.user-login-view-container .nav-bar-block .bar.bar-assertive {
+    background-color: $black;
+    color: $white;
+}
+
+.user-login-view-container .bar .title {
+    height: px2rem(44px);
+    line-height: px2rem(45px);
+    font-size: 18px;
+    color: $white;
+}
+.user-login-view-container .bar.bar-assertive div.title{
+    color: $white;
+    font-weight: 500;
+}
+.user-login-view-container .login-content{
+    background-color: $white;
+}
+
+.user-login-view-container .item-input{
+    padding: 0;
+}
+
+.user-login-view-container .person-padding{
+    padding: px2rem(68px) px2rem(43px) 0 px2rem(43px);
+}
+.user-login-view-container .item{
+    margin: 0;
+    height: px2rem(60px);
+    border: none;
+//  border-bottom: 1px $whisper solid;
+    position: relative;
+}
+.user-login-view-container .item input{
+    line-height: normal;
+    padding: 0;
+    height: px2rem(20px);
+    font-size: 16px;
+    line-height: 100%;
+    position: absolute;
+    bottom: px2rem(8px);
+    color: $black;
+    padding-top: px2rem(15px);
+    box-sizing: content-box;
+}
+
+.user-login-view-container .item input::-webkit-input-placeholder{
+    line-height: normal;
+    font-size: 14px;
+}
+.user-login-view-container .item input::-moz-placeholder{
+    line-height: normal;
+    font-size: 14px;
+}
+.user-login-view-container .item input:-ms-input-placeholder{
+    line-height: normal;
+    font-size: 14px; 
+}
+
+.user-login-view-container .input-label{
+    position: absolute;
+    top: px2rem(17px);
+    font-size: 10px;
+    line-height: px2rem(10px);
+    color: $gray;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(px2rem(5px));
+    transition: .5s;
+//  transition-property: opacity;
+}
+
+.user-login-view-container .forget-pwd{
+    position: absolute;
+    padding: px2rem(10px) px2rem(0px) px2rem(12px) px2rem(10px);
+    display: block;
+    right: px2rem(0px);
+    bottom: px2rem(0px);
+    font-size: 12px;
+    color: $radical-red;
+    z-index: 100;
+    opacity: 0.65;
+}
+.user-login-view-container .button.button-block{
+    margin: 0;
+    border-radius: px2rem(3px);
+    font-size: 16px;
+}
+
+.user-login-view-container .button.button-block.activated {
+    background-color: #4c4c4c;
+}
+
+.user-login-view-container .list{
+    margin: 0 0 px2rem(68px) 0;
+}
+.user-login-view-container .login-register{
+    text-align: center;
+    font-size: 14px;
+    line-height: px2rem(44px);
+}
+
+.user-login-view-container .label{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.user-login-view-container .btn-padding{
+    padding: 0 px2rem(33px);
+}
+//.user-login-view-container .button{
+//  min-height: none;
+//}
+//.user-login-view-container .activated{
+////  border: 1px solid #000000;
+////  border-radius: 0.125rem;
+//}
+
+
+

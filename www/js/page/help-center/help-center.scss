@@ -1,0 +1,203 @@
+// Include variables sass
+@import "www/css/sass/global";
+
+.help-center-view-container .help-center {
+    background-color: #F5F5F5;
+}
+
+.help-center-view-container .bar.bar-assertive{
+    background-color: $black;
+    border: none;
+}
+
+.help-center-view-container .help-center b ,#product .detail b {
+    font-weight: 600;
+    display: inline-block;
+//  margin-bottom: 0.875rem;
+    margin-bottom: px2rem(14px);
+    color: $black;
+    margin-top: px2rem(15px);
+}
+.help-center-view-container .help-center p > b, .help-center div.item ul > li b {
+    margin: 0;
+}
+
+.help-center-view-container .help-center .list,#product .detail .list {
+    border-top: none;
+    padding: 0;
+}
+
+.help-center-view-container .help-center .item,#product .detail .item {
+    border-width: 0;
+//  padding: 0.5rem 1.0rem 0.5rem 1.5rem;
+    padding: px2rem(8px) px2rem(30px) px2rem(8px) px2rem(30px);
+}
+
+.help-center-view-container .help-center .item h2, .help-center .item p, #product .detail .item h2, #product .detail .item p {
+//  font-size: 0.85rem;
+//  margin-bottom: 0.5rem;
+    font-size: px2rem(14px);
+    margin-bottom: px2rem(8px);
+}
+
+.help-center-view-container .help-center .item h2, #product .detail .item h2 {
+    color: #F34;
+}
+
+.help-center-view-container .help-center .item p, #product .detail .item p {
+    white-space: normal;
+}
+
+.help-center-view-container .help-center .item img, #product .detail .item img {
+//  width: 1.875rem;
+//  height: 1.875rem;
+//  position: absolute;
+//  top: 0.125rem;
+//  left: 0.125rem;
+    width: px2rem(30px);
+    height: px2rem(30px);
+    position: absolute;
+    top: px2rem(2px);
+    left: px2rem(2px);
+}
+
+.help-center-view-container .help-center-top {
+    height: px2rem(195px);
+    display: flex;
+    background-color: $white;
+    margin-bottom: px2rem(5px);
+}
+
+.help-center-view-container .help-center-top img {
+    width: px2rem(75px);
+    height: px2rem(75px);
+    margin: auto;
+}
+
+.help-center-view-container .help-center .return-detail {
+//  font-size: 0.75rem;
+    font-size: px2rem(12px);
+    padding-bottom: px2rem(13px);
+    width: 100%;
+    text-align: center;
+    margin-bottom: px2rem(13px);
+}
+
+.help-center-view-container .help-center  div.item-divider {
+    padding: 0;
+    min-height: 0;
+    height: px2rem(5px);
+}
+
+.help-center-view-container .help-center .return-detail .t-head{
+    background-color: $white;
+}
+
+.help-center-view-container .help-center .return-detail .t-head td {
+    text-align: center;
+    background-color: $white;
+}
+
+.help-center-view-container .help-center .return-detail td {
+    border: 1px solid #ddd;
+    padding: px2rem(2px);
+    background-color: white;
+}
+
+.help-center-view-container .help-center .item img.service-detail-icon, #product .detail .item img.service-detail-icon  {
+    position: static;
+    float: left;
+//  margin-right: 0.875rem;
+    margin-right: px2rem(14px);
+}
+.help-center-view-container p{
+    margin: 0;
+    color: $black;
+}
+.help-center-view-container .text-center{
+    padding-bottom: px2rem(10px);
+    background-color: $white;
+}
+.help-center-view-container .help-center .return-detail .gray{
+    background-color: $white-smoke;
+}
+//.help-center-view-container .help-center .return-detail .white-color{
+//  background-color: $white;
+//}
+.help-center-view-container .help-center .return-detail .t-head .gray{
+    background-color: $white-smoke;
+}
+
+.help-center-view-container .white-color{
+    background-color: $white;
+    text-align: center;
+    padding-top: px2rem(10px);
+    font-size: 12px;
+    padding-bottom: px2rem(20px);
+}
+
+.help-center-view-container .white-color span{
+    color: $radical-red;
+    font-weight: bold;
+}
+
+.help-center-view-container .item div{
+    margin-left: px2rem(24px);
+    position: relative;
+}
+
+.help-center-view-container .item div em{
+    position: absolute;
+    left: px2rem(-24px);
+}
+
+.help-center-view-container div.service-explanation div {
+    margin: 0;
+    display: inline-block;
+}
+
+.help-center-view-container div.service-explanation > b {
+    display: block;
+}
+
+.help-center-view-container div.service-explanation > i {
+    float: left;
+    font-size: 36px;
+    position: relative;
+    top: -3px;
+    margin-right: px2rem(12px);
+}
+
+.help-center-view-container div.service-explanation > div > p {
+    max-width: px2rem(270px);
+}
+
+.help-center div.item ul {
+    list-style: disc;
+    margin-left: px2rem(18px);
+}
+
+.help-center div.item ul > li {
+    white-space: normal;
+    font-size: px2rem(14px);
+    line-height: px2rem(20px);
+    color: #000;
+    margin-bottom: px2rem(12px);
+    word-break: break-all;
+    word-wrap: break-word;
+}
+//@media screen and (max-device-width: 370px) {
+//
+//  .help-center-view-container .help-center .return-detail {
+//      position: relative;
+//      left: -1.0rem;
+//  }
+//
+//}
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<ion-view view-title="登录" class="user-login-view-container">
+    <ion-nav-title>
+        <div class="bar bar-header">
+            <h1 class="title">登录</h1>
+        </div>
+    </ion-nav-title>
+    <ion-content has-bouncing="false" class="login-content has-header" delegate-handle="loginScroll">
+
+        <div class="person-padding">
+            <div class="list">
+                <div class="item item-input one-px-border">
+                    <span ng-class="{label:isNumberPromptShow}" class="input-label">手机号</span>
+                    <input id="tel-input" type="tel" placeholder="手机号" maxlength="11" ng-click="onItemFocusClick()" ng-model="user.name"
+                           ng-change="numberChange()">
+                </div>
+                <div class="item item-input one-px-border">
+                    <span ng-class="{label:isPasswordPromptShow}" class="input-label">密码</span>
+                    <input id="psd-input" type="password" class="ios10-platform-reset-font-size" placeholder="密码" maxlength="16" ng-click="onItemFocusClick()" ng-model="user.password"
+                           ng-change="passwordChange()">
+                    <span id="forget_psw" class="forget-pwd" my-sref="password">忘记密码</span>
+				</div>
+            </div>
+        </div>
+        <div class="btn-padding">
+	        <button class="button button-block button-assertive" ng-click="login(user.name, user.password)">
+	                立即登录
+	        </button>
+	        <div id="login-register" class="login-register" my-sref="register">账号注册</div>
+        </div>
+        <svg id="my_svg">
+            <g id="account_balance">
+                <path d="M 4 44 L 42 44 L 42 38 L 4 38 L 4 44 L 4 44 Z" fill="#336699"/>
+                <path d="M 32 20 L 32 34 L 38 34 L 38 20 L 32 20 L 32 20 Z" fill="#336699"/>
+                <path d="M 20 20 L 20 34 L 26 34 L 26 20 L 20 20 L 20 20 Z" fill="#336699"/>
+                <path d="M 8 20 L 8 34 L 14 34 L 14 20 L 8 20 L 8 20 Z" fill="#336699"/>
+                <path d="M 23 2 L 4 12 L 4 16 L 42 16 L 42 12 L 23 2 L 23 2 Z" fill="#336699"/>
+            </g>
+            <g id="account_box" style="display:none">
+                <path d="M 6 10 L 6 38 C 6 40.2 7.8 42 10 42 L 38 42 C 40.2 42 42 40.2 42 38 L 42 10 C 42 7.8 40.2 6 38 6 L 10 6 C 7.8 6 6 7.8 6 10 L 6 10 Z" fill="#336699"/>
+                <path d="M 30 18 C 30 21.3 27.3 24 24 24 C 20.7 24 18 21.3 18 18 C 18 14.7 20.7 12 24 12 C 27.3 12 30 14.7 30 18 L 30 18 Z" fill="#FFF"/>
+                <path d="M 12 34 C 12 30 20 27.8 24 27.8 C 28 27.8 36 30 36 34 L 36 36 L 12 36 L 12 34 L 12 34 Z" fill="#FFF"/>
+            </g>
+        </svg>
+    </ion-content>
+</ion-view>
