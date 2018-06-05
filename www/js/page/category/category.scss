@@ -1,0 +1,123 @@
+// Include variables sass
+@import "www/css/sass/global";
+
+.category-view-container .category-content{
+//  background-color: white;
+}
+
+.category-view-container .scroll{
+    height: 100%;
+}
+
+.category-view-container .header-search-container {
+    position: relative;
+    margin: 0 57px;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+
+.category-view-container .header-search-container .icon-search {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    font-size: 18px;
+    line-height: 18px;
+    color: #000;
+}
+
+
+
+.category-view-container .bar.bar-assertive{
+    background-color: $black;
+    background-image: none;
+}
+
+.category-view-container .search-padding{
+   box-sizing: border-box;
+   padding: 9px 10px 9px 10px;
+   background: #f1f1f1; 
+}
+
+.category-view-container .header-search-container{
+    margin: 0;
+}
+
+.category-view-container .header-search-container .icon-search{
+    font-size: 20px;
+    top: 6px;
+    left: 10px;
+}
+.category-view-container .header-search-container .search-input{
+    font-size: $smaller-font-size;
+    line-height: 27px;
+    margin: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 4px;
+    padding-left: 37px;
+    width: 100%;
+    height: 27px;
+    border-radius: 14px;
+    color:$pink-swan;
+    background-color: #ffffff;
+}
+
+.category-view-container input::-webkit-input-placeholder {
+    font-size: $smaller-font-size;
+    line-height: 15px;
+}
+
+.category-view-container .category-padding{
+    padding: 15px 10px;
+    background-color: white;
+    min-height: 100%;
+    padding-bottom: 30px;
+}
+
+
+
+.category-view-container .category-list{
+    width: 100%;
+    margin-top: -20px;
+}
+.category-view-container .category-list .category-li{
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 25%;
+    height: px2rem(100px);
+    margin-top: px2rem(30px);
+}
+.category-view-container .category-list .category-li .li-icon{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}
+
+.category-view-container .category-list .category-li span{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    font-size: $smaller-font-size;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

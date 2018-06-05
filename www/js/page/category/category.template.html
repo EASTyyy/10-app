@@ -1,0 +1,28 @@
+<ion-view view-title="分类" class="category-view-container">
+    <ion-nav-title>
+        <div class="bar bar-header">
+            <i class="icon iconfont icon-leftarrow" ng-click="backToHome()"></i>
+            <h1 class="title">分类</h1>
+        </div>
+    </ion-nav-title>
+    <ion-content class="category-content has-header">
+        <!--scroll="false"-->
+        <div class="search-padding">
+            <div class="header-search-container">
+                <!--<input type="text" placeholder="露肩连衣裙" class="search-input" ng-focus="onSearchInputFocused()"  />-->
+                <div class="search-input" ng-click="onSearchInputFocused()">露肩连衣裙</div>
+                <i class="icon iconfont icon-search"></i>
+            </div>
+        </div>
+        <div class="category-padding">
+            <ul class="category-list">
+                <li class="category-li" ng-repeat="category in categories" ng-if="category.flag==0" my-sref="category-detail({id:category.id,title:category.name})">
+                    <div class="{{'li-icon sprites-' + category.icon}}">
+                        <!--<img src="img/category-myself/0610_分类_02.png" />-->
+                    </div>
+                    <span ng-bind="category.name"></span>
+                </li>
+            </ul>
+        </div>
+    </ion-content>
+</ion-view>
