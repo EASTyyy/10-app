@@ -1,0 +1,83 @@
+@import "www/css/sass/global";
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-head {
+    display: none;
+}
+
+.popup-container .popup {
+    background-color: $white;
+    width: px2rem(225px);
+    border-radius: px2rem(7px);
+}
+
+.popup-body {
+    position: relative;
+    width: px2rem(225px);
+    height: px2rem(94px);
+    /*border-bottom: 1px solid $whisper;*/
+    background: -webkit-linear-gradient(0, $whisper, $whisper 50%, transparent 50%) bottom right / 100% 1px no-repeat;
+    background: -o-linear-gradient(0, $whisper, $whisper 50%, transparent 50%) bottom right / 100% 1px no-repeat;
+    background: linear-gradient(0, $whisper, $whisper 50%, transparent 50%) bottom right / 100% 1px no-repeat;
+}
+
+.popup-body span {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: px2rem(153px);
+    text-align: center;
+    color: $black;
+    font-size: 16px;
+    line-height: px2rem(18px);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.popup-buttons {
+    padding: 0;
+    height: px2rem(44px);
+    min-height: px2rem(44px);
+}
+
+.popup-buttons .button,
+.popup-buttons .button.activated,
+.popup-buttons .button:hover {
+    margin-right: 0;
+    height: px2rem(44px);
+    min-height: px2rem(44px);
+    border: none;
+    border-radius: px2rem(7px);
+    color: $radical-red;
+    background-color: $white;
+}
+
+.popup-buttons .button:first-child {
+    border-top-right-radius: 0;
+    color: $black;
+}
+
+.popup-buttons .button:last-child {
+    color: $radical-red;
+}
+
+.popup-buttons .button:nth-child(2){
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    /*border-left: 1px solid $whisper;*/
+    background: -webkit-linear-gradient(left, $whisper, $whisper 50%, transparent 50%) bottom left  / 1px 100% no-repeat;
+    background: -o-linear-gradient(left, $whisper, $whisper 50%, transparent 50%) bottom left  / 1px 100% no-repeat;
+    background: linear-gradient(to right, $whisper, $whisper 50%, transparent 50%) bottom left  / 1px 100% no-repeat;
+    color: #ff3344;
+}
+
+.popup-buttons .button, 
+.popup-buttons .button.activated, 
+.popup-buttons .button:hover{
+    font-size: 14px;
+}
+
+

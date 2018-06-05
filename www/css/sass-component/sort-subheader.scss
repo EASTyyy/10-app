@@ -1,0 +1,45 @@
+@import "www/css/sass/global";
+.bar.bar-subheader.sort-subheader {
+    padding: 0;
+    background-color: $white;
+}
+
+.bar.bar-subheader.sort-subheader .row,
+.bar.bar-subheader.sort-subheader .row .col {
+    padding: 0;
+}
+
+.bar.bar-subheader.sort-subheader li {
+    height: px2rem(44px);
+    line-height: px2rem(44px);
+    font-size: 14px;
+    text-align: center;
+}
+
+.bar.bar-subheader.sort-subheader li.active {
+    color: $radical-red;
+}
+
+.bar.bar-subheader.sort-subheader .sort-arrow-container {
+    position: relative;
+}
+
+.bar.bar-subheader.sort-subheader .sort-arrow-container .icon {
+    position: absolute;
+    left: px2rem(-5px);
+    line-height: px2rem(44px);
+    color: $pink-swan;
+}
+
+.bar.bar-subheader.sort-subheader .sort-arrow-container .icon-sortup {
+    bottom: px2rem(-11px);
+}
+
+.bar.bar-subheader.sort-subheader .sort-arrow-container .icon-sortdown {
+    top: px2rem(-8px);
+}
+
+.bar.bar-subheader.sort-subheader .sort-arrow-container.up .icon-sortup,
+.bar.bar-subheader.sort-subheader .sort-arrow-container.down .icon-sortdown {
+    color: $radical-red;
+}

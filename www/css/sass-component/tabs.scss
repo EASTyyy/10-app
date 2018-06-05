@@ -1,0 +1,96 @@
+@import "www/css/sass/global";
+.tabs-striped .tabs,
+.tabs {
+    background-color: $black;
+    background-image: none;
+}
+.tabs-striped .tabs {
+    border-bottom: none;
+}
+
+.tabs .iconfont {
+    margin-top: px2rem(3px);
+    color: $white;
+}
+
+.tabs .tab-title {
+    position: relative;
+    top: px2rem(-1px);
+    font-size: 10px;
+    color: $white;
+}
+
+.tab-item .icon {
+    font-size: 29px;
+    height: 29px;
+    line-height: 29px;
+}
+
+@media screen and(max-width: 325px) {
+    .tab-item .icon {
+        font-size: px2rem(29px);
+        height: px2rem(29px);
+        line-height: px2rem(29px);
+    }
+}
+
+.tab-item {
+    opacity: 1;
+}
+
+.tab-item.tab-item-active .iconfont,
+.tab-item.tab-item-active .tab-title {
+    opacity: 1;
+    color: $radical-red;
+}
+
+.tabs-striped .tab-item.tab-item-active .badge,
+.tabs-striped .tab-item.activated .badge {
+    top: px2rem(13px);
+}
+
+.tabs .tab-item .badge-item-count {
+    top: px2rem(13px);
+    right: 43%;
+    /*right: calc(50% - px2rem(7px));*/
+    padding: 0;
+    width: px2rem(13px);
+    text-align: center;
+    font-size: 10px;
+    color: #ff1248;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.tabs .tab-item .icon-mine {
+    position: relative;
+}
+
+.tabs .tab-item .notification:after {
+    position: absolute;
+    top: px2rem(0px);
+    right: 35%;
+    /*right: calc(50% - px2rem(14px));*/
+    box-sizing: content-box;
+    content: ' ';
+    display: block;
+    width: px2rem(8px);
+    height: px2rem(8px);
+    font-size: 10px;
+    color: $radical-red;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    background-color: $radical-red;
+}
+
+.tabs .icon-shoppingcartfull {
+    position: relative;
+}
+
+
+.tabs .icon-shoppingcartfull:after {
+    position: absolute;
+    content: $icon-shoppingcartfull;
+    font-size: 13px;
+    right: calc(51% - 7px);
+    color: #f34;
+}

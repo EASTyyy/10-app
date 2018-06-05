@@ -1,0 +1,54 @@
+@import "www/css/sass/global";
+.quantity-selector-container {
+    position: relative;
+}
+
+.quantity-selector-container:after, .quantity-selector-container:before {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.quantity-selector-container .selector {
+    float: left;
+    box-sizing: border-box;
+    width: px2rem(28px);
+    height: px2rem(28px);
+    border: 1px solid $gainsboro;
+}
+
+.quantity-selector-container .selector.subtract-selector {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.quantity-selector-container .selector.add-selector {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.quantity-selector-container .selector .iconfont {
+    font-size: px2rem(26px);
+    line-height: px2rem(26px);
+    color: $matterhorn;
+}
+
+.quantity-selector-container .selector.disable .iconfont{
+    color: $pink-swan;
+}
+
+.quantity-selector-container .quantity
+{
+    float: left;
+    box-sizing: border-box;
+    padding: 0;
+    width: px2rem(50px);
+    height: px2rem(28px);
+    line-height: px2rem(28px);
+    font-size: px2rem(16px);
+    color: $matterhorn;
+    text-align: center;
+    border-top: 1px solid $gainsboro;
+    border-bottom: 1px solid $gainsboro;
+}
+
