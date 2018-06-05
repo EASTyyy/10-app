@@ -1,0 +1,247 @@
+.city-picker-bg{
+    background:transparent;
+}
+.city-picker-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(0, 0, 0, 0.4);*/
+    -webkit-transition: 0.1s opacity linear;
+    transition: 0.1s opacity linear;
+}
+.city-bgclose{
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+}
+.city-picker{
+    z-index: 3;
+    position: absolute;
+    background: #cfd5da;
+    width: 100%;
+    height: 296px;
+    bottom: 0;
+}
+.city-picker .city-picker-header{
+    position: absolute;
+    height: 44px;
+    width: 100%;
+}
+@media screen and (min-width: 370px) and (max-width: 380px) {
+    .app.platform-ios .city-picker .city-picker-header h1.title {
+        font-weight: 400;
+    }
+}
+
+.city-picker ion-scroll li {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 36px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+    overflow: hidden;
+    line-height: 36px;
+    color: #000;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+}
+.city-picker .city-picker-inner{
+    height: 212px;position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 0;
+    font-size: 1.2rem;
+    text-align: right;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-mask-box-image: -webkit-linear-gradient(bottom, transparent, transparent 5%, white 20%, white 80%, transparent 95%, transparent);
+    -webkit-mask-box-image: linear-gradient(to top, transparent, transparent 5%, white 20%, white 80%, transparent 95%, transparent);
+}
+.city-picker ion-scroll{
+  height: 216px;
+}
+.city-picker .scroll{
+    padding: 87px 0;
+}
+
+.platform-android .city-picker .scroll {
+    height: auto;
+}
+
+.city-picker .picker-center-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 0px;
+  pointer-events: none;
+}
+.city-picker .picker-center-highlight:after {
+    position: absolute;
+    top: auto;
+    right: auto;
+    margin-bottom: -18px;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: block;
+    width: 100%;
+    height: 47%;
+    content: '';
+    background-color: rgba(255,255,255,.4);
+    -webkit-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+.city-picker .picker-center-highlight:before {
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  z-index: 15;
+  display: block;
+  width: 100%;
+  height: 50%;
+  margin-top:-18px;
+  content: '';
+  background-color: rgba(255,255,255,.4);
+  -webkit-transform-origin: 50% 0;
+      -ms-transform-origin: 50% 0;
+       -o-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+}
+.city-picker .row,.city-picker  .col{
+    padding: 0;
+}
+
+
+.city-picker ion-scroll li.currentProvince>a, .city-picker ion-scroll li.currentCity>a, .city-picker ion-scroll li.currentCountry>a {
+    color: #f34!important;
+}
+
+.city-picker ion-scroll li {
+    padding: 0 10px!important;
+}
+
+.city-picker ion-scroll li {
+    height: 45px!important;
+}
+
+.city-picker ion-scroll li>a {
+    display: inline-block;
+    text-align: center;
+    width: 6.5625rem;
+    color: #808080;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+}
+
+.city-picker .hideCountry ion-scroll li>a {
+    width: 100%;
+}
+
+div.picker-center-highlight span.picker-center-top {
+    display: inline-block;
+    height: 50%;
+    margin-top: -18px;
+}
+
+div.hideCountry div.picker-center-highlight span.picker-center-top {
+
+}
+
+div.picker-center-highlight span.picker-center-bottom {
+    display: inline-block;
+    height: 50%;
+    margin-top: 43px;
+}
+
+div.picker-center-highlight {
+    white-space: normal;
+}
+
+div.picker-center-highlight span {
+    padding: 0 10px;
+    width: 33%;
+    float: left;
+    position: relative;
+    text-align: center;
+}
+
+div.hideCountry div.picker-center-highlight span {
+    width: 50%;
+}
+
+div.hideCountry div.picker-center-highlight span.leftItem {
+    padding-right: 5px;
+}
+
+div.hideCountry div.picker-center-highlight span.rightItem {
+    padding-left: 5px;
+}
+
+div.picker-center-highlight span a {
+    display: inline-block;
+    height: 100%;
+    width: 105px;
+}
+
+div.hideCountry div.picker-center-highlight span a {
+    width: 100%!important;
+}
+
+div.picker-center-highlight span.picker-center-top a {
+    margin-bottom: -1px;
+    border-bottom: 1px solid #f34;
+}
+
+div.picker-center-highlight span.picker-center-bottom a {
+    margin-top: -1px;
+    border-top: 1px solid #f34;
+}
+
+.city-picker-header .buttons .button, .city-picker-header .buttons .button:hover, .city-picker-header .buttons .button.activated {
+    border: none;
+}
+
+.city-picker-inner li.smallFont > a {
+    font-size: 12px;
+    position: relative;
+    top: 12px;
+}
+
+.city-picker-inner li.smallFont + li > a {
+    font-size: 14px;
+}
+
+.city-picker-inner li.currentProvince + li > a, .city-picker-inner li.currentCity + li > a, .city-picker-inner li.currentCountry + li > a {
+    font-size: 14px;
+}
+
+.city-picker-inner li.currentProvince + li + li > a, .city-picker-inner li.currentCity + li + li > a, .city-picker-inner li.currentCountry + li + li > a {
+    font-size: 12px;
+    position: relative;
+    bottom: 12px;
+}

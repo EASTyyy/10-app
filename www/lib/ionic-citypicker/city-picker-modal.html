@@ -1,0 +1,69 @@
+<div ng-class="{'city-picker-backdrop' : vm.backdrop }">
+    <ion-modal-view class="city-picker-bg">
+        <div class="city-bgclose" ng-click="vm.clickToClose()"></div>
+        <div class="city-picker" style="background-color:#fff;">
+            <header class=" bar city-picker-header" style="background:#fff; color: #000;" ng-class="vm.barCssClass">
+                <h1 class="title" style="color: #000; font-size: 18px">请选择省市区</h1>
+                <div class="buttons">
+                    <button class="button" ng-click="vm.returnOk()"
+                            style="color: #f34; background-color: transparent; font-size: 14px">{{vm.okText}}
+                    </button>
+                </div>
+            </header>
+            <div class="city-picker-inner has-header" ng-class="{'hideCountry': vm.hideCountry}">
+                <div class="row ">
+                    <div class="col" ng-class="{true: 'col-50', false: 'col-33'}[vm.hideCountry]">
+                        <ion-scroll delegate-handle={{vm.provinceHandle}} has-bouncing="true"
+                                    on-scroll="vm.getData('province')" scrollbar-y="false">
+                            <ul class="province">
+                                <li ng-repeat="province in vm.cityData"
+                                    ng-class="{ 'currentProvince': province.currentProvince, 'smallFont': province.topSmallFont }">
+                                    <a ng-bind="province.name"></a>
+                                </li>
+                            </ul>
+                        </ion-scroll>
+                    </div>
+                    <div class="col" ng-class="{true: 'col-50', false: 'col-33'}[vm.hideCountry]">
+                        <ion-scroll delegate-handle={{vm.cityHandle}} has-bouncing="true" on-scroll="vm.getData('city')"
+                                    scrollbar-y="false">
+                            <ul>
+                                <li ng-repeat="city in vm.province.sub" ng-class="{'currentCity': city.currentCity, 'smallFont': city.topSmallFont  }">
+                                    <a ng-bind="city.name"></a></li>
+                            </ul>
+                        </ion-scroll>
+                    </div>
+                    <div class="col col-33" ng-if="!vm.hideCountry">
+                        <ion-scroll delegate-handle={{vm.countryHandle}} has-bouncing="true"
+                                    on-scroll="vm.getData('country')" scrollbar-y="false">
+                            <ul>
+                                <li ng-repeat="country in vm.city.sub"
+                                    ng-class="{'currentCountry': country.currentCountry, 'smallFont': country.topSmallFont  }">
+                                    <a ng-bind="country.name"></a></li>
+                            </ul>
+                        </ion-scroll>
+                    </div>
+                </div>
+                <div class="picker-center-highlight">
+      <span class="picker-center-top leftItem">
+          <a></a>
+      </span>
+      <span class="picker-center-top rightItem">
+          <a></a>
+      </span>
+      <span class="picker-center-top" ng-if="!vm.hideCountry">
+          <a></a>
+      </span>
+      <span class="picker-center-bottom" ng-if="!vm.hideCountry">
+          <a></a>
+      </span>
+      <span class="picker-center-bottom leftItem">
+          <a></a>
+      </span>
+      <span class="picker-center-bottom rightItem">
+          <a></a>
+      </span>
+                </div>
+            </div>
+        </div>
+    </ion-modal-view>
+</div>
