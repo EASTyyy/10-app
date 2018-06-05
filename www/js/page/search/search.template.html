@@ -1,0 +1,35 @@
+<ion-view view-title="搜索" class="search-view-container">
+    <ion-nav-title>
+        <div class="bar bar-header">
+            <div class="search-container">
+
+                <ion-content id="search_container" scroll="false">
+                    <input class="search-input" name="search" autofocus="autofocus" type="search" placeholder="搜索" ng-model="search.keyword"
+                        ng-keypress="onSearchInputKeyPress($event)" required>
+                    <i class="icon iconfont icon-search"></i>
+                </ion-content>
+
+            </div>
+            <span class="right-text" ng-click="back()">取消</span>
+        </div>
+    </ion-nav-title>
+
+    <div class="bar bar-subheader" ng-if="hasRecords() || hasPopular()">
+        <div class="hot-search-container" ng-if="hasPopular()">
+            <h3 class="hot-search-title">热门搜索</h3>
+            <ul class="hot-search-tags">
+                <li ng-repeat="item in popular" ng-click="onItemClicked('{{item}}')" ng-bind="item"></li>
+            </ul>
+        </div>
+
+        <div class="search-records-container" ng-if="hasRecords()">
+            <ul class="search-records">
+                <li class="one-px-border" ng-repeat="record in records" ng-bind="record" ng-click="onItemClicked(record)"></li>
+                <li>
+                    <button type="button" class="button button-secondary-radius button-outline" ng-click="clearRecords()">清空搜索记录</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</ion-view>

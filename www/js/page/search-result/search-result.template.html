@@ -1,0 +1,84 @@
+<ion-view view-title="搜索" class="search-result-view-container">
+    <ion-nav-title>
+        <div class="bar bar-header">
+            <div class="search-container search-result-header-container">
+                <!--<input class="search-input" type="search" placeholder="搜索" ng-model="keyword" ng-focus="jumpToSearch()">-->
+                <div class="search-input" ng-bind="keyword" ng-click="jumpToSearch()">搜索</div>
+                <!--<i class="icon iconfont icon-search"></i>-->
+            </div>
+            <i class="icon iconfont icon-leftarrow" ng-click="back();"></i>
+        </div>
+    </ion-nav-title>
+    <div class="bar bar-subheader sort-subheader" ng-if="hasData">
+        <ul class="row">
+            <li class="col" ng-class="{active: isSortKeyActived('-new')}" ng-click="sortBy('-new')">最新上线</li>
+            <li class="col" ng-class="{active: isSortKeyActived('-hot')}" ng-click="sortBy('-hot')">销量优先</li>
+            <li class="col" ng-if="isShowPriceState('default')" ng-click="sortBy('+price')">价格
+                <span class="sort-arrow-container">
+                    <i class="icon iconfont icon-sortup"></i>
+                    <i class="icon iconfont icon-sortdown"></i>
+                </span>
+            </li>
+
+            <li class="col active" ng-if="isShowPriceState('+price')" ng-click="sortBy('-price')">价格低到高
+                <span class="sort-arrow-container down">
+                    <i class="icon iconfont icon-sortup"></i>
+                    <i class="icon iconfont icon-sortdown"></i>
+                </span>
+            </li>
+
+            <li class="col active" ng-if="isShowPriceState('-price')" ng-click="sortBy('+price')">价格高到低
+                <span class="sort-arrow-container up">
+                    <i class="icon iconfont icon-sortup"></i>
+                    <i class="icon iconfont icon-sortdown"></i>
+                </span>
+            </li>
+        </ul>
+    </div>
+    		<!--delegate-handle="home-scroller" on-scroll="onScrollHandle()" scroll-event-interval="200"-->
+    <ion-content ng-class="{'has-subheader':!isProductsEmpty()}" on-scroll="onScrollHandle()" delegate-handle="search-scroller" scroll-event-interval="200">
+
+        <div class="product-list-style-default" ng-if="!isProductsEmpty()">
+            <div class="wrapper" ng-repeat="product in products" my-sref="product({id:product.id})">
+                <a ng-click="gotoProduct(product.id)" class="product-container">
+                    <div class="image-container" ng-class="{'image-pre-order': isPreProduct(product),
+                         'image-sold-out': isSoldOut(product)}">
+                        <img class="image" ng-src="{{product.imageUrl + IMAGE_PARAMS}}" spinner-on-load size="big" alt="">
+                    </div>
+                    <span class="name" ng-bind="product.name"></span>
+                    <!--<span class="price" ng-bind="product.price | currency:'&yen;'"></span>-->
+                </a>
+            </div>
+            <div ng-if="isProductsOdd()" class="wrapper thelast">
+                <a class="product-container">
+                    <div class="image-container">
+                        <img class="image" src="img/empty-product.png">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="no-more-data-container" ng-if="bottomSlogan.state">
+            已经到底了，等我更新吧~
+        </div>
+
+        <div class="loading-animation-container" ng-if="showLoading">
+            <div class="loading-animation"><i></i><i></i></div>
+        </div>
+
+        <!--<div class="loading-animation-container" ng-if="showLoading">
+            <div class="loading-animation"><i></i><i></i></div>
+        </div>-->
+
+        <ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="hasMoreData" icon="none" style="height:60px;"></ion-infinite-scroll>
+
+    </ion-content>
+
+
+    <div class="empty-content-container" ng-if="isShowEmpty">
+        <div class="empty-image"></div>
+        <div class="empty-text"></div>
+        <button type="button" class="button button-radius button-clr-red" ng-click="jumpToSearch()">重新搜索</button>
+    </div>
+
+</ion-view>

@@ -1,0 +1,45 @@
+<ion-view view-title="退货申请" hide-back-button="true" id="refund-goods-application">
+    <ion-nav-title>
+	<div class="bar bar-header">
+		<youren-back-button></youren-back-button>
+		<h1 class="title">退货申请</h1>
+	</div>
+        </ion-nav-title>
+    <ion-content class="has-header" id="sale-application">
+        <div ng-class="{
+        'sale-application-state-wait': afterSaleInfos.state === 0,
+        'sale-application-state-agree': afterSaleInfos.state===1,
+        'sale-application-state': afterSaleInfos.state === 2 || afterSaleInfos.state === 3}" ng-bind="stateText"></div>
+
+        <div class="sale-application-wrapper one-px-border top-border" ng-repeat="stateInfo in afterSaleInfos.stateInfos">
+            <div class="sale-application-content" ng-class="{'right': stateInfo.state_change_role === 1}">
+                <p class="time" ng-bind="stateInfo.create_time*1000 | date:'yyyy-MM-dd HH:mm:ss'"></p>
+                <div class="content-wrapper">
+                    <div class="header-img">
+                        <img ng-src="./img/10_logo.png" ng-if="stateInfo.state_change_role === 1">
+                        <img ng-src="{{portrait}}" ng-if="stateInfo.state_change_role === 0" data-error-src="img/my_10.jpg" watch-src="portrait" spinner-on-load>
+                    </div>
+                    <div class="content-info-wrapper">
+                        <span>
+                            <p ng-bind-html="stateInfo.refund_number_text" ng-if="stateInfo.refund_number_text"></p>
+                            <p ng-bind-html="stateInfo.refund_cash_text" ng-if="stateInfo.refund_cash_text"></p>
+                            <p ng-bind-html="stateInfo.refund_reason_text" ng-if="stateInfo.refund_reason_text"></p>
+                            <p ng-bind-html="stateInfo.state_change_reason"></p>
+                            <div ng-if="$index === 0 && afterSaleInfos.refundProofImages.length >= 0">
+                                <img class="proof-img" ng-src="{{imageSrc}}"  ng-repeat="imageSrc in afterSaleInfos.refundProofImages">
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+    <ion-footer-bar ng-show="afterSaleInfos.state===1 && (!afterSaleInfos.hasExpressInfo)" >
+        <div class="submit" ng-click="onExpressNumClick()">
+            <a>
+                填写物流单号
+            </a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

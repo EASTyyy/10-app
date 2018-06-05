@@ -1,0 +1,71 @@
+// Include variables sass
+@import "www/css/sass/global";
+.search-view-container {
+    background-color: $white-smoke;
+}
+
+#search_container {
+    margin-right: px2rem(64px);
+    position: initial;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.search-view-container .bar.bar-subheader {
+    padding: 0;
+}
+
+.search-view-container .hot-search-container {
+    padding: px2rem(25px)  px2rem(20px)  px2rem(20px)  px2rem(20px);
+    width: 100%;
+    background-color: $white;
+}
+
+.search-view-container .hot-search-title {
+    color: $gray;
+    font-size: 14px;
+}
+
+.search-view-container .hot-search-tags li {
+    display: inline-block;
+    margin: px2rem(10px) px2rem(10px) 0 0;
+    padding: px2rem(2px) px2rem(17px);
+    line-height: px2rem(25px);
+    color: #ff3344;
+    font-size: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ffd6da;
+    border-radius: px2rem(5px);
+}
+
+.search-view-container .search-records-container {
+    margin-top: px2rem(5px);
+    background-color: $white;
+}
+
+.search-view-container .search-records li {
+    padding: px2rem(20px) 0;
+    overflow-x:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid $whisper;
+    font-size: 14px;
+    color: #4c4c4c;
+    margin-left: px2rem(20px);
+}
+
+.search-view-container .search-records li:last-of-type {
+    padding: px2rem(25px) 0;
+    text-align: center;
+    text-indent: -1.25rem;
+    border-bottom: none;
+}
+.search-view-container .search-records li .button-secondary-radius {
+    font-size: 12px;
+    color: #808080;
+    border-color: 1px solid #808080;
+    height: px2rem(29px) !important;
+    padding:0 px2rem(18px) !important;
+}
+

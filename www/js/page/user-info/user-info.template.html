@@ -1,0 +1,34 @@
+<ion-view view-title="个人信息" class="user-info-view-container">
+    <ion-nav-title>
+        <div class="bar bar-header">
+            <youren-back-button></youren-back-button>
+            <h1 class="title">个人信息</h1>
+        </div>
+    </ion-nav-title>
+    <ion-content class="userInfo has-header">
+        <div class="list">
+            <div class="upload-avator-container one-px-border" ng-click="chooseImgWay()">
+
+                <a class="item item-icon-right userInfo-img-box">
+                    <span>头像</span>
+                    <!--<img class="userInfo-img" ng-src="{{user.avator}}" onhaschange="angular.element(this).scope().onImageloadStart()" onload="angular.element(this).scope().onImageLoadComplete()" />-->
+                    <img class="userInfo-img" ng-src="{{user.avator}}" data-error-src="img/my_10.jpg" watch-src="user.avator" spinner-on-load />
+                    <i class="icon iconfont icon-rightarrow"></i>
+                </a>
+                <!--<input type="file"  onchange="angular.element(this).scope().readFile(this)"/>-->
+            </div>
+            <a class="item item-icon-right one-px-border" my-sref="userInfo-updateName">
+                <span>昵称</span>
+                <span ng-bind="user.displayName"></span>
+                <i class="icon iconfont icon-rightarrow"></i>
+            </a>
+            <a class="item item-icon-right" ng-click="showUpdateSexModal()">
+                <span>性别</span>
+                <span ng-bind="user.displaySex"></span>
+                <i class="icon iconfont icon-rightarrow"></i>
+            </a>
+        </div>
+
+    </ion-content>
+    <!--<div ng-if="isMarkShow" class="mark" ng-click="prevent()"></div>-->
+</ion-view>

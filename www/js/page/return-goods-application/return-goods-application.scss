@@ -1,0 +1,241 @@
+// Include variables sass
+@import "www/css/sass/global";
+
+#refund-goods-application  .sale-application-state {
+    background: #ff707c;
+    height: px2rem(35px);
+    line-height: px2rem(35px);
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+#refund-goods-application #sale-application{
+    background-color:white;
+}
+
+#refund-goods-application  .sale-application-state-wait {
+    background: #ffebec;
+    height: px2rem(35px);
+    line-height: px2rem(35px);
+    text-align: center;
+    font-size: 16px;
+    color: #ff4b5a;
+}
+
+#refund-goods-application .sale-application-state-agree {
+    background: #ffd7da;
+    height: px2rem(35px);
+    line-height: px2rem(35px);
+    text-align: center;
+    font-size: 16px;
+    color: #ff4b5a;
+}
+
+#refund-goods-application  .sale-application-wrapper{
+    padding: px2rem(20px) px2rem(15px);
+}
+#refund-goods-application  .sale-application-wrapper .time{
+    color: #7f7f7f;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: px2rem(20px);
+}
+#refund-goods-application  .sale-application-wrapper .content-wrapper{
+    position: relative;
+}
+
+#refund-goods-application  .sale-application-wrapper .header-img{
+    position: absolute;
+}
+
+#refund-goods-application  .sale-application-wrapper .header-img img{
+    border-radius: 50%;
+    height: px2rem(44px);
+}
+
+#refund-goods-application  .sale-application-wrapper .content-info-wrapper{
+    min-height: px2rem(44px);
+    margin-left: px2rem(70px);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+//  width: 100%;
+    max-width: 77%;
+}
+
+#refund-goods-application  .sale-application-wrapper .content-info-wrapper p{
+    margin: 0;
+    font-size: 14px;
+}
+
+#refund-goods-application  .sale-application-wrapper .content-info-wrapper span{
+    background: #f2f2f2;
+    padding: px2rem(15px);
+    border-radius: px2rem(5px);
+//  max-width: 80%;
+}
+
+#refund-goods-application  .sale-application-wrapper .content-info-wrapper span:before{
+    content: "";
+    position: absolute;
+    height: px2rem(15px);
+    width: px2rem(15px);
+    background: #f2f2f2;
+    top: px2rem(24px);
+    margin-top: px2rem(-10px);
+    left: px2rem(62px);
+    z-index: -99;
+    transform: rotate(45deg);
+    -ms-transform:rotate(45deg);    /* IE 9 */
+    -moz-transform:rotate(45deg);   /* Firefox */
+    -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+    -o-transform:rotate(45deg);     /* Opera */
+}
+
+/*************************#refund-goods-application right*******************************/
+#refund-goods-application  .sale-application-wrapper .right .time{
+    text-align: right;
+    color: #7f7f7f;
+}
+#refund-goods-application  .sale-application-wrapper .right .content-wrapper{
+    position: relative;
+    overflow: hidden;
+}
+
+#refund-goods-application  .sale-application-wrapper .right .header-img{
+    position: absolute;
+    right: 0;
+}
+
+#refund-goods-application  .sale-application-wrapper .right .header-img img{
+    border-radius: 50%;
+    height: px2rem(44px);
+}
+
+#refund-goods-application  .sale-application-wrapper .right .content-info-wrapper{
+    min-height: px2rem(44px);
+    margin-left: 0;
+    margin-right: px2rem(70px);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+}
+
+#refund-goods-application  .sale-application-wrapper .right .content-info-wrapper span{
+    background: #f2f2f2;
+    padding: px2rem(10px);
+    border-radius: px2rem(5px);
+    clear: both;
+}
+
+#refund-goods-application  .sale-application-wrapper .right .content-info-wrapper span:before{
+    width: 0;
+    height: 0;
+}
+
+#refund-goods-application  .sale-application-wrapper .right .content-info-wrapper span:after{
+    content: "";
+    position: absolute;
+    height: px2rem(15px);
+    width: px2rem(15px);
+    background: #f2f2f2;
+    top: px2rem(24px);
+    margin-top: px2rem(-10px);
+    right: px2rem(62px);
+    z-index: -99;
+    transform: rotate(45deg);
+    -ms-transform:rotate(45deg);    /* IE 9 */
+    -moz-transform:rotate(45deg);   /* Firefox */
+    -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+    -o-transform:rotate(45deg);     /* Opera */
+}
+
+
+
+
+
+
+#refund-goods-application  .sale-application-wrapper .content-info-wrapper .proof-img{
+    width: px2rem(70px);
+    height: px2rem(70px);
+    margin-top: px2rem(20px);
+    vertical-align: top;
+}
+
+#refund-goods-application  .sale-application-wrapper .content-info-wrapper .proof-img:nth-child(2){
+    margin-left: px2rem(10px);
+    margin-right: px2rem(10px);
+}
+
+#refund-goods-application .submit{
+    width: 100%;
+    height: 100%;
+    background: $black;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+#refund-goods-application .submit a{
+    color: white;
+    width: 100%;
+    height: px2rem(44px);
+    line-height: px2rem(44px);
+}
+#refund-goods-application .bar-footer{
+    padding: 0;
+}
+
+#refund-goods-application .border-none{
+    background-position: bottom;
+}
+
+#refund-goods-application .content-info-wrapper p{
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

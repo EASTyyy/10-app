@@ -1,0 +1,17 @@
+// Include variables sass
+@import "www/css/sass/global";
+.search-result-view-container {
+
+}
+
+.search-result-view-container .bar.bar-header .search-container {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: px2rem(45px);
+    padding-right: px2rem(15px);
+}
+
+.search-result-view-container .bar.bar-header .search-container .search-input {
+    padding-left: px2rem(12px);
+    padding-right: px2rem(12px);
+}
