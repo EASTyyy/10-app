@@ -1,0 +1,9 @@
+{{#sprites}}
+.sprites-{{name}} {
+  display: inline-block;
+  width: calc({{px2rem px.width}});
+  height:calc({{px2rem px.height}});
+  background: url({{{escaped_image}}}) no-repeat calc({{px2rem px.offset_x}}) calc({{px2rem px.offset_y}});
+  background-size: calc({{px2rem px.total_width}}) calc({{px2rem px.total_height}});
+}
+{{/sprites}}
