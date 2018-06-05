@@ -1,0 +1,78 @@
+.base-icon-font {
+  font-family: "iconfont" !important;
+  font-size: 29px;
+  line-height: 29px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0px;
+  -moz-osx-font-smoothing: grayscale; }
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.7); }
+
+.popup-head {
+  display: none; }
+
+.popup-container .popup {
+  background-color: #ffffff;
+  width: 14.0625rem;
+  border-radius: 0.4375rem; }
+
+.popup-body {
+  position: relative;
+  width: 14.0625rem;
+  height: 5.875rem;
+  /*border-bottom: 1px solid $whisper;*/
+  background: -webkit-linear-gradient(0, #e5e5e5, #e5e5e5 50%, transparent 50%) bottom right/100% 1px no-repeat;
+  background: -o-linear-gradient(0, #e5e5e5, #e5e5e5 50%, transparent 50%) bottom right/100% 1px no-repeat;
+  background: linear-gradient(0, #e5e5e5, #e5e5e5 50%, transparent 50%) bottom right/100% 1px no-repeat; }
+
+.popup-body span {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 9.5625rem;
+  text-align: center;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.125rem;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%); }
+
+.popup-buttons {
+  padding: 0;
+  height: 2.75rem;
+  min-height: 2.75rem; }
+
+.popup-buttons .button,
+.popup-buttons .button.activated,
+.popup-buttons .button:hover {
+  margin-right: 0;
+  height: 2.75rem;
+  min-height: 2.75rem;
+  border: none;
+  border-radius: 0.4375rem;
+  color: #ff3344;
+  background-color: #ffffff; }
+
+.popup-buttons .button:first-child {
+  border-top-right-radius: 0;
+  color: #000; }
+
+.popup-buttons .button:last-child {
+  color: #ff3344; }
+
+.popup-buttons .button:nth-child(2) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  /*border-left: 1px solid $whisper;*/
+  background: -webkit-linear-gradient(left, #e5e5e5, #e5e5e5 50%, transparent 50%) bottom left/1px 100% no-repeat;
+  background: -o-linear-gradient(left, #e5e5e5, #e5e5e5 50%, transparent 50%) bottom left/1px 100% no-repeat;
+  background: linear-gradient(to right, #e5e5e5, #e5e5e5 50%, transparent 50%) bottom left/1px 100% no-repeat;
+  color: #ff3344; }
+
+.popup-buttons .button,
+.popup-buttons .button.activated,
+.popup-buttons .button:hover {
+  font-size: 14px; }
